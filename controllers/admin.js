@@ -1,9 +1,13 @@
 const CategAr = require("../models/category-ar");
 
 exports.addCateg = (req, res, next) => {
-  const name = req.body.name;
+  const nameAr = req.body.name_ar;
+  const nameEn = req.body.name_en;
   const newCateg = new CategAr({
-    name: name,
+    name: {
+      ar: nameAr,
+      en: nameEn,
+    },
     prod: [],
   });
   newCateg
@@ -16,10 +20,15 @@ exports.addCateg = (req, res, next) => {
     });
 };
 exports.editCateg = (req, res, next) => {
-  const name = req.body.name;
+  const nameAr = req.body.name_ar;
+  const nameEn = req.body.name_en;
   const categId = req.params.categId;
   CategAr.findById(categId)
     .then((c) => {
+      const name = {
+        ar: nameAr,
+        en: nameEn,
+      };
       c.name = name;
       return c.save();
     })
@@ -41,8 +50,9 @@ exports.removeCateg = (req, res, next) => {
     });
 };
 exports.addProd = (req, res, next) => {
-  const name = req.body.name;
-  const categ = req.body.categ;
+  const nameAr = req.body.name_ar;
+  const nameEn = req.body.name_en;
+  const categId = req.params.categId;
   const price = req.body.price;
   const quant = req.body.quant;
   const imgs = req.files;
@@ -53,13 +63,16 @@ exports.addProd = (req, res, next) => {
     });
   }
   const prod = {
-    name: name,
+    name: {
+      ar: nameAr,
+      en: nameEn,
+    },
     price: price,
     quant: quant,
     //imgs: imgsPath,
   };
   console.log(prod);
-  CategAr.findOne({ name: categ })
+  CategAr.findById(categId)
     .then((c) => {
       c.prods.push(prod);
       return c.save();
@@ -73,8 +86,9 @@ exports.addProd = (req, res, next) => {
 };
 exports.editProd = (req, res, next) => {
   const prodId = req.params.prodId;
-  const name = req.body.name;
-  const categ = req.body.categ;
+  const nameAr = req.body.name_ar;
+  const nameEn = req.body.name_en;
+  const categId = req.params.categId;
   const price = req.body.price;
   const quant = req.body.quant;
   const imgs = req.files;
@@ -82,10 +96,11 @@ exports.editProd = (req, res, next) => {
   //   imgs.forEach((i) => {
   //     imgsPath.push(i.path);
   //   });
-  CategAr.findOne({ name: categ })
+  CategAr.findById(categId)
     .then((c) => {
       const oldProd = c.prods.id(prodId);
-      oldProd.name = name;
+      oldProd.name.ar = nameAR;
+      oldProd.name.en = nameEn;
       oldProd.price = price;
       oldProd.quant = quant;
       return c.save();
@@ -99,10 +114,9 @@ exports.editProd = (req, res, next) => {
 };
 exports.removeProd = (req, res, next) => {
   const prodId = req.params.prodId;
-  const categ = req.body.categ;
-  CategAr.findOne({ name: categ })
+  const categId = req.params.categId;
+  CategAr.findById(categId)
     .then((c) => {
-      console.log(c.prods.id(prodId));
       c.prods.id(prodId).remove();
       return c.save();
     })

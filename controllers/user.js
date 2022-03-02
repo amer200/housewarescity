@@ -4,7 +4,7 @@ const saltRounds = 10;
 const nodemailer = require("nodemailer");
 const ejs = require("ejs");
 
-async function sendEmail(email) {
+async function sendEmail(email, link) {
   let transporter = nodemailer.createTransport({
     host: "smtp.ethereal.email",
     port: 587,
@@ -15,7 +15,7 @@ async function sendEmail(email) {
     },
   });
   const data = await ejs.renderFile(__dirname + "/email.ejs", {
-    link: "Stranger",
+    link: link,
   });
   // send mail with defined transport object
   let info = await transporter.sendMail({
@@ -40,7 +40,9 @@ exports.signUp = (req, res, next) => {
         res.send("this email is used!!");
       } else {
         const hash = bcrypt.hashSync(password, saltRounds);
-        console.log(hash);
+        const code = Math.floor(Math.random() * 10000);
+        const hashedCode = bcrypt.hashSync(code.toString(), 10);
+        console.log(hashedCode);
         const newUser = new user({
           firstname: firstname,
           lastname: lastname,
@@ -48,17 +50,63 @@ exports.signUp = (req, res, next) => {
           email: email,
           role: role,
           isactive: false,
-          code: Math.floor(Math.random() * 100000),
+          code: hashedCode,
         });
         return newUser.save();
       }
     })
     .then((u) => {
       console.log(u);
-      return sendEmail(u.email);
+      const link = `http://localhost:8080/user/confirm/email/${u.code}`;
+      return sendEmail(u.email, link);
     })
     .then((result) => {
       res.send(result);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+exports.emailConfirm = (req, res, next) => {
+  const code = req.params.code;
+  user
+    .findOne({ code: code })
+    .then((u) => {
+      if (u) {
+        u.isactive = true;
+        u.code = "";
+        u.save().then((result) => {
+          res.send("your account is active now");
+        });
+      } else res.send("no user found");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+exports.signIn = (req, res, next) => {
+  const email = req.body.email;
+  const password = req.body.password;
+  user
+    .findOne({ email: email })
+    .then((u) => {
+      if (u) {
+        bcrypt.compare(password, u.password, function (err, result) {
+          if (result) {
+            const auth = {
+              id: u._id,
+              isactive: u.isactive,
+              role: u.role,
+            };
+            req.session.Auth = auth;
+            res.send("loged in");
+          } else {
+            res.send("wrong password");
+          }
+        });
+      } else {
+        res.send("no user with this email");
+      }
     })
     .catch((err) => {
       console.log(err);

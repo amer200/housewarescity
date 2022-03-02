@@ -2,9 +2,8 @@ const mongoose = require("mongoose");
 
 const prodScema = mongoose.Schema({
   name: {
-    type: String,
-    uniqui: true,
-    required: true,
+    ar: String,
+    en: String,
   },
   quant: {
     type: Number,
@@ -18,11 +17,10 @@ const prodScema = mongoose.Schema({
 });
 const categorySchema = mongoose.Schema({
   name: {
-    type: String,
-    uniqui: true,
-    required: true,
+    ar: String,
+    en: String,
   },
   prods: [prodScema],
 });
-prodScema.index({ name: "text", "name": "text" });
+prodScema.index({ name: "text", name: "text" });
 module.exports = mongoose.model("Categ-ar", categorySchema);

@@ -9,7 +9,7 @@ const userSchema = mongoose.Schema({
   email: { type: String, unique: true },
   isactive: { type: Boolean, required: true },
   role: { type: String },
-  code: Number,
+  code: String,
 });
 
 module.exports = mongoose.model("User", userSchema);
