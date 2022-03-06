@@ -1,0 +1,133 @@
+.tinv-wishlist {
+
+  input[type=checkbox] {
+    display: inline-block;
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+    height: auto;
+
+  }
+
+  .cart-empty {
+    padding: 12px 25px;
+    background-color: #eee;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  p.return-to-shop .button {
+    display: inline-block;
+    background-color: $theme-color;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-weight: 700;
+
+    &:Hover {
+      background-color: $title-color;
+      color: $white-color;
+    }
+  }
+
+  table.tinvwl-table-manage-list {
+    font-size: 14px;
+  }
+
+  table.tinvwl-table-manage-list button {
+    border-radius: 5px;
+  }
+
+  .product-stock i {
+    margin-right: 5px;
+  }
+
+  .tinv-modal {
+    .icon_big_times {
+      margin-bottom: 5px;
+      color: $theme-color;
+    }
+  }
+
+
+  button.button {
+    border: none;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: $theme-color;
+    color: #fff;
+    padding: 0;
+  }
+
+  // button.button:hover {
+  //   background-color: $title-color;
+  //   color: #fff;
+  // }
+
+  button.button i {
+    font-size: 1rem !important;
+    margin-right: 3px !important;
+  }
+
+  th,
+  td.product-name {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: $title-font;
+  }
+
+  td.product-name {
+    a {
+      color: $title-color;
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+  }
+
+  td.product-price del {
+    font-size: 0.9em;
+  }
+
+  .social-buttons {
+    >span {
+      font-weight: 700;
+      margin-right: 10px;
+      font-family: $title-font;
+      color: $title-color;
+    }
+
+    li {
+      a.social {
+        background-color: $theme-color;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+        line-height: 30px;
+
+        i {
+          line-height: inherit;
+        }
+
+        &:hover {
+          background-color: $title-color;
+          color: $white-color;
+        }
+      }
+    }
+  }
+}
+
+
+@include sm {
+  .tinv-wishlist table {
+    table-layout: fixed;
+  }
+}

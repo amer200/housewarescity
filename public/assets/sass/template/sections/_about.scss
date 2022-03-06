@@ -1,0 +1,57 @@
+.about-style1 {
+  .about-title {
+    font-size: 60px;
+    position: relative;
+    z-index: 3;
+    font-weight: 700;
+    margin: 67px 0 95px -263px;
+  }
+
+  .about-text {
+    @media (min-width: $md) {
+      font-size: 18px;
+      line-height: 30px;
+    }
+    margin: 0;
+  }
+}
+
+.img-box {
+  position: relative;
+  padding-bottom: 55px;
+
+  .img {
+    &-2 {
+      position: absolute;
+      right: 35px;
+      bottom: 0;
+    }
+  }
+}
+
+
+@include lg {
+  .about-style1 {
+    .about-title {
+      font-size: 48px;
+      margin: -0.2em 0 20px 0;
+    }
+  }
+}
+
+
+@include md {
+  .about-style1 {
+    .about-title {
+      font-size: 36px;
+    }
+  }
+}
+
+@include sm {
+  .about-style1 {
+    .about-title {
+      font-size: 30px;
+    }
+  }
+}

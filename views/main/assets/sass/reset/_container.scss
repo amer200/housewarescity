@@ -1,0 +1,105 @@
+@media only screen and (min-width: 1300px) {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
+    max-width: calc(var(--main-container) + var(--container-gutters));
+    padding-left: calc(var(--container-gutters) / 2);
+    padding-right: calc(var(--container-gutters) / 2);
+  }
+
+  .container-fluid {
+    padding-left: calc(var(--container-gutters) / 2);
+    padding-right: calc(var(--container-gutters) / 2);
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .container-fluid.px-0 {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+
+    .row {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+@include hd {
+  .vs_hd_container {
+    max-width: 1920px;
+  }
+}
+
+
+.vs_container {
+  --main-container: 1505px;
+  overflow: hidden;
+
+  @media (min-width: $xl) {
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include hd {
+    margin-left: auto;
+  }
+
+  &_style2 {
+    --main-container: 1580px;
+  }
+
+  &_style3 {
+    --main-container: 1510px;
+
+    @include hd {
+      &.ms-xxl-0 {
+        margin-left: auto !important;
+      }
+    }
+  }
+
+  &_style4 {
+    --main-container: 1680px;
+  }
+
+  &_style5 {
+    --main-container: 1420px;
+  }
+}
+
+
+.vs-body-box {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--box-container);
+  background-color: $white-color;
+
+  @include xl {
+    --box-container: 1280px;
+  }
+
+  @include lg {
+    --box-container: 1000px;
+  }
+}
+
+
+@include md {
+  .container-fluid {
+    &.px-30 {
+      padding-left: var(--bs-gutter-x, .75rem);
+      padding-right: var(--bs-gutter-x, .75rem);
+    }
+  }
+}
+
+@include xl {
+  .vs_container_style2 {
+    --main-container: 1280px;
+  }
+}

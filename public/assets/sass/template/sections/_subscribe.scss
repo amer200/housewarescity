@@ -1,0 +1,77 @@
+.subscribe-form {
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 20px;
+
+    > i {
+      left: 30px;
+      right: auto;
+      top: 31px;
+      color: $body-color;
+    }
+  }
+
+  .form-control {
+    border-color: #dedede;
+    border-radius: 0;
+    height: 80px;
+    width: calc(100% - 13px);
+    padding-left: 67px;
+    margin-right: 13px;
+
+    @include inputPlaceholder {
+      color: #6f6f6f;
+    }
+  }
+
+  .vs-btn {
+    position: absolute;
+    right: 0;
+    top: 12px;
+  }
+
+  .form-text {
+    margin-bottom: 22px;
+  }
+
+  .form-notice {
+    i {
+      color : $theme-color;
+      margin-right: 10px;
+    }
+
+    a {
+      text-decoration: underline;
+      font-weight: 500;
+      color: $body-color;
+    }
+  }
+}
+
+
+
+@include sm {
+  .subscribe-form  {
+    .vs-btn {
+      position: relative;
+      top: 0;
+      margin-top: 10px;
+    }
+
+    .form-notice {
+      font-size: 14px;
+    }
+
+    .form-control {
+      height: 60px;
+      width: 100%;
+      padding-left: 47px;
+    }
+
+    .form-group>i {
+      left: 20px;
+      top: 22px;
+    }
+  }
+}

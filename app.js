@@ -25,7 +25,7 @@ const userRoutes = require("./routes/user");
 const isAdmin = require("./controllers/isAdmin").isAdmin;
 app.use("/admin/:lang", isAdmin, adminRoutes);
 app.use("/user/:lang", userRoutes);
-app.use("/:lang", mainRoutes);
+app.use("/", mainRoutes);
 mongoose
   .connect(dbUrl)
   .then((result) => {

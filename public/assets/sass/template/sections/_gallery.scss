@@ -1,0 +1,141 @@
+.gallery_card {
+  position: relative;
+  
+  &_img {
+    img {
+      width: 100%;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 1;
+    opacity: 0;
+    background-color: $title-color;
+    visibility: hidden;
+    transform: scale(0.6);
+    transition: all ease 0.4s;
+  }
+
+  &_icon {
+    color: $white-color;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 3;
+    font-size: 42px;
+    transform: translate(-50%, -50%);
+    transition: all ease 0.4s;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &:hover {
+    &:after {
+      opacity: 0.80;
+      visibility: visible;
+      transform: scale(1);
+    }
+
+    .gallery_card {
+      &_icon {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0.1s;
+      }
+    }
+  }
+
+  &.style2 {
+    &:after {
+      background-color : $theme-color;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  &_column {
+    max-width: 736px;
+  }
+
+
+  &_middle {
+    text-align: center;
+    height: 530px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -240px 0 -240px;
+
+    .gallery_card {
+      &_icon {
+        color: $white-color;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        left: 0;
+        top: 0;
+        position: relative;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 47px;
+        margin-bottom: 0;
+        max-width: 320px;
+        text-align: center;
+
+        i {
+          font-size: 62px;
+          display: block;
+          margin-bottom: 32px;
+        }
+      }
+    }
+  }
+}
+
+
+@include xl {
+  .gallery_card_middle {
+    margin: -130px auto 0 auto;
+    padding: 100px 0 0 0;
+    max-width: 90%;
+    
+    &_wrap {
+      order: 1;
+    }
+  }
+}
+
+@include lg {
+  .gallery_card_middle {
+    height: 430px;
+  }
+}
+
+@include md {
+  .gallery_card {
+    &_middle {
+      height: 280px;
+      margin-top: -80px;
+      padding-top: 50px;
+      
+      .gallery_card_icon {
+        font-size: 24px;
+        line-height: 30px;
+        max-width: 245px;
+
+        i {
+          font-size: 40px;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}

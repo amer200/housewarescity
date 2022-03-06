@@ -1,0 +1,22 @@
+.error-img {
+  margin-bottom: 45px;
+}
+
+.error-title {
+  margin-bottom: 15px;
+}
+
+.error-text {
+  margin-bottom: 50px;
+}
+
+
+@include md {
+  .error-img {
+    margin-bottom: 15px;
+  }
+
+  .error-text {
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,62 @@
+.slick-track>[class*=col] {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x)/ 2);
+  padding-left: calc(var(--bs-gutter-x)/ 2);
+  margin-top: var(--bs-gutter-y);
+}
+
+@media only screen and (min-width: 1300px) {
+  .row:not([class*=gx-]):not([class*=g-]) {
+    --bs-gutter-x: 30px;
+  }
+
+  .gx-80 {
+    --bs-gutter-x: 80px;
+  }
+}
+
+@media (min-width: $md) and (max-width: $lg) {
+  .gx-80 {
+    --bs-gutter-x: 40px;
+  }
+}
+
+.gy-30 {
+  --bs-gutter-y: 30px;
+}
+
+
+.gx-20 {
+  --bs-gutter-x: 20px;
+}
+
+.gx-10 {
+  --bs-gutter-x: 10px;
+}
+
+.gx-1px {
+  --bs-gutter-x: 1px;
+}
+
+
+@media (min-width: $ml) {
+  .gx-30 {
+    --bs-gutter-x: 30px;
+  }
+}
+
+@media only screen and (min-width: $xl) {
+  .gx-50 {
+    --bs-gutter-x: 50px;
+  }
+
+  .gx-40 {
+    --bs-gutter-x: 40px;
+  }
+
+  .gx-80 {
+    --bs-gutter-x: 80px;
+  }
+}

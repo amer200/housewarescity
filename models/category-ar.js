@@ -14,12 +14,14 @@ const prodScema = mongoose.Schema({
     required: true,
   },
   imgs: [String],
+  offer: Number,
 });
 const categorySchema = mongoose.Schema({
   name: {
     ar: String,
     en: String,
   },
+  img: String,
   prods: [prodScema],
 });
 prodScema.index({ name: "text", name: "text" });

@@ -1,0 +1,38 @@
+@each $bgcolorMap, $value in $bgcolorMap {
+  .bg-#{$bgcolorMap} {
+    background-color: #{$value} !important;
+  }
+}
+
+.background-image,
+[data-bg-src] {
+  @include background-content(no-repeat, cover, center center);
+}
+
+.bg-fluid {
+  @include background-content(no-repeat, 100% 100%, center center);
+}
+
+.bg-auto {
+  background-size: auto auto;
+}
+
+.bg-orange {
+  background-color: #ffa800;
+}
+
+.bg-light-gray {
+  background-color: #f4f4f4;
+}
+
+.bg-style1 {
+  background-color: #f9fdfd;
+}
+
+.bg-style2 {
+  background-color: #f2f8fb;
+}
+
+.bg-style3 {
+  background-color: #f1f1f1;
+}

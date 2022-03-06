@@ -1,0 +1,176 @@
+.sidemenu-wrapper {
+  position: fixed;
+  z-index: 99999;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease 0.8s;
+
+  .closeButton {
+    display: inline-block;
+    border: none;
+    @include equal-size(50px);
+    line-height: 50px;
+    font-size: 24px;
+    padding: 0;
+    position: absolute;
+    top: -200px;
+    right: 455px;
+    background-color: $title-color;
+    color: $white-color;
+    border-radius: 50%;
+    transform: rotate(0);
+    transition: right ease 1s,
+    opacity ease 2s,
+    visibility ease 2s,
+    background-color ease 0.4s,
+    color ease 0.4s;
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+
+    &:hover {
+      color: $white-color;
+      background-color: $theme-color;
+    }
+  }
+
+
+  .sidemenu-content {
+    background-color: $white-color;
+    width: 480px;
+    max-width: 100%;
+    margin-left: auto;
+    padding: 45px 60px;
+    height: 100%;
+    overflow: scroll;
+    position: relative;
+    right: -500px;
+    cursor: auto;
+    transition-delay: 1s;
+    transition: right ease 1s;
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
+      box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.1);
+      background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar {
+      width: 2px;
+      background-color: #F5F5F5;
+    }
+
+  } 
+
+  .widget {
+    padding: 0;
+    margin-bottom: 60px;
+    border: none;
+    background-color: transparent;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .widget-title {
+    font-weight: 600;
+  }
+
+  .footer-logo {
+    margin-bottom: 26px;
+  }
+
+  .newsletter-form {
+    display: flex;
+
+    .form-control {
+      height: 50px;
+      padding-left: 20px;
+      font-size: 14px;
+    }
+
+    .vs-btn {
+      background-color: $title-color;
+      color: $white-color;
+      height: 50px;
+      padding-top: 0;
+      padding-bottom: 0;
+      line-height: 50px;
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: capitalize;
+
+      &:hover {
+        background-color: $theme-color;
+        color: $white-color;
+      }
+    }
+  }
+
+  .vs-widget-about {
+    .vs-btn {
+      margin-top: 10px;
+      padding: 17px 29px;
+      font-size: 16px;
+    }
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transition: all ease 0.8s;
+
+    .closeButton {
+      top: 20px;
+      opacity: 1;
+      visibility: visible;
+      transition-delay: 0.5s;
+    }
+    
+    .sidemenu-content {
+      right: 0;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+}
+
+
+
+@include sm {
+  .sidemenu-wrapper {
+    .sidemenu-content {
+      max-width: 280px;
+      padding: 50px 15px 30px 15px;
+    }
+
+    .closeButton {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 18px;
+      top: 5px;
+      right: calc(280px - 20px);
+    }
+
+    .widget {
+      margin-bottom: 40px;
+    }
+
+    .newsletter-form {
+      display: block;
+
+      .vs-btn {
+        margin-top: 10px;
+      }
+    }
+  }
+
+}

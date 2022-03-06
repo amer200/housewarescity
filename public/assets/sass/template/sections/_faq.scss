@@ -1,0 +1,76 @@
+.vs-accordion {
+  .accordion-item {
+    margin-bottom: 38px;
+  }
+
+  .accordion-body {
+    padding: 25px 0 1px 0;
+    border: none;
+
+  }
+
+  .accordion-collapse {
+    border: none;
+  }
+
+  .accordion-button {
+    border: none;
+    padding: 0;
+    line-height: 1;
+    font-size: 20px;
+    font-weight: 500;
+    padding-bottom: 16px;
+    color: $title-color;
+    border-bottom: 1px solid #eeeeee;
+    text-align: left;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    &:after {
+      content: '\f067';
+      font-family: $icon-font;
+      width: auto;
+      height: auto;
+      background-image: none;
+      font-weight: 300;
+      transform: none;
+      color: $title-color;
+    }
+
+    &:not(.collapsed) {
+      background-color: transparent;
+      outline: none;
+      color: $title-color;
+
+      &:after {
+        content: '\f068';
+      }
+    }
+  }
+}
+
+
+@include lg {
+  .vs-accordion {
+    .accordion-button {
+      font-size: 16px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+@include lg {
+  .vs-accordion {
+    .accordion-button {
+      line-height: 1.4;
+      padding-bottom: 15px;
+    }
+
+    .accordion-item {
+      margin-bottom: 28px;
+    }
+  }
+}

@@ -1,0 +1,345 @@
+.cta_box {
+  background-color: #f1f0ec;
+
+  &_logo {
+    margin-bottom: 45px;
+  }
+
+  &_title {
+    font-size: 72px;
+    font-weight: 500;
+  }
+
+  &_text {
+    margin-bottom: 37px;
+  }
+}
+
+
+.cta-text {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.012em;
+  margin-bottom: 50px;
+}
+
+.cta-title {
+  font-size: 54px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 10px;
+
+  &--style2 {
+    font-size: 34px;
+    line-height: 38px;
+    font-weight: 700;
+  }
+}
+
+.cta-icon {
+  margin-bottom: 50px;
+}
+
+
+.cta_pill {
+  background-color: $theme-color;
+  color: $white-color;
+  width: var(--pill-size, 140px);
+  height: var(--pill-size, 140px);
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 5px;
+  margin-bottom: 30px;
+  
+  .number {
+    font-size: 34px;
+    font-weight: 600;
+    display: block;
+  }
+
+  .text {
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+.cta-price {
+  color: $theme-color;
+  margin-bottom: 0;
+  line-height: 1;
+  
+  del {
+    color: $body-color;
+    font-size: 0.8em;
+  }
+}
+
+.cta-list {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    padding-left: 35px;
+    color: $title-color;
+    position: relative;
+    margin-bottom: 45px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    i {
+      color: $success-color;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-size: 1.2em;
+    }
+  }
+}
+
+.cta-img-1 {
+  width: 100%;
+  position: relative;
+
+  img {
+    margin: -20px -105px -70px 0;
+    max-width: inherit;
+  }
+}
+
+.cta-style1 {  
+  padding: 100px 0;
+  text-align: center;
+
+  .cta-content {
+    padding: 100px 0;
+    max-width: 765px;
+    margin: 0 auto;
+
+    &:not([data-opacity]) {
+      &:before {
+        opacity: 0.95;
+      }
+    }
+
+    >* {
+      position: relative;
+      z-index: 3;
+    }
+  }
+  
+  .cta-title {
+    font-size: 90px;
+    text-transform: uppercase;
+    color: $title-color;  
+    margin-bottom: 0;
+    line-height: 1;
+    margin-top: -0.15em;
+  }   
+
+  .cta-subtitle {
+    font-size: 21px;
+    font-weight: 600;
+    color: $title-color;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 22px;
+  }
+
+  .cta-note {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: $title-color;
+    margin: 10px 0 -0.34em 0;
+  }
+}
+
+
+@include xl {
+  .cta_box {
+    &_title {
+      font-size: 62px;
+    }
+
+    &_logo {
+      margin-bottom: 25px;
+    }
+  }
+
+  .cta-style1 {
+    .cta-title {
+      font-size: 60px;
+    }
+
+    .cta-subtitle {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .cta-note {
+      font-size: 14px;
+    }
+  }
+}
+
+@include ml {
+  .cta-list {
+    li {
+      font-size: 18px;
+
+      i {
+        top: 4px;
+      }
+    }    
+  }
+
+  .cta-title {
+    &--style2 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+  }
+
+  .cta_pill {
+    --pill-size: 100px;
+
+    .text {
+      font-size: 14px;
+    }
+    .number {
+      font-size: 26px;
+    }
+
+  }
+  
+  .cta-price.h3 {
+    font-size: 22px;
+  }
+  
+}
+
+@include lg {
+  .cta_box {
+    &_title {
+      font-size: 42px;
+    }
+  }
+
+  .cta-title {
+    font-size: 42px;
+  }
+
+  .cta-icon {
+    margin-bottom: 30px;
+  }
+
+  .cta-text {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .cta-img-1 img {
+    margin: 0 0 0 0;
+    max-width: 110%;
+  }
+
+  .cta-list {
+    margin-left: -35px;
+
+    li {
+      margin-bottom: 15px;
+    }
+  }
+
+  .cta_pill {
+    margin-bottom: 20px;
+  }
+
+}
+
+@include md {
+  .cta-title {
+    font-size: 36px;
+  }
+
+  .cta-list {
+    margin-left: -0;
+  }
+
+  .cta-img-1 img {
+    max-width: 100%;
+  }
+
+  .cta-style1 {
+    padding: 60px 0;
+
+    .cta-content {
+      padding: 60px 0;
+      max-width: 90%;
+    }
+
+    .cta-title {
+      font-size: 42px;
+    }
+
+    .cta-subtitle {
+      font-size: 16px;
+      margin-top: 10px;
+      letter-spacing: 0.1em;
+    }
+  }
+}
+
+@include sm {
+  .cta-title {
+    font-size: 30px;
+
+    &--style2 {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
+
+  .cta-text {
+    font-size: 14px;
+  }
+
+  .cta-list {
+    margin-top: 20px;
+    
+    li {
+      padding-left: 25px;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+  }
+  .cta-style1 {
+    .cta-content {
+      padding: 60px 0;
+      max-width: 95%;
+    }
+
+    .cta-title {
+      font-size: 30px;
+    }
+
+    .cta-subtitle {
+      font-size: 14px;
+    }
+
+    .cta-note {
+      font-size: 12px;
+    }
+  }
+}
