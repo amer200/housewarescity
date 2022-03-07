@@ -1,4 +1,3 @@
-const { name } = require("ejs");
 const CategAr = require("../models/category-ar");
 
 exports.getIndex = (req, res, next) => {
@@ -67,6 +66,26 @@ exports.getProds = (req, res, next) => {
       });
   }
 };
+exports.getProd = (req, res, next) => {
+  const prodId = req.params.prodId;
+  CategAr.find()
+    .then((cs) => {
+      cs.forEach((c) => {
+        c.prods.forEach((p) => {
+          if (p._id.toString() == prodId) {
+            console.log(c.prods);
+            res.render("main/product-details", {
+              p: p,
+              moreP: c.prods,
+            });
+          }
+        });
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 exports.getCategs = (req, res, next) => {
   CategAr.find()
     .then((c) => {
@@ -82,23 +101,6 @@ exports.getCateg = (req, res, next) => {
   CategAr.findById(categId)
     .then((c) => {
       res.send(c);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
-
-exports.getProd = (req, res, next) => {
-  const prodId = req.params.prodId;
-  CategAr.find()
-    .then((cs) => {
-      cs.forEach((c) => {
-        c.prods.forEach((p) => {
-          if (p._id.toString() == prodId) {
-            res.send(p);
-          }
-        });
-      });
     })
     .catch((err) => {
       console.log(err);

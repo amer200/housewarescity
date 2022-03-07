@@ -28,24 +28,31 @@ async function sendEmail(email, link) {
   return nodemailer.getTestMessageUrl(info);
 }
 exports.signUp = (req, res, next) => {
-  const firstname = req.body.firstname;
-  const lastname = req.body.lastname;
+  const name = req.body.name;
+  const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
   const role = "basic";
+  if (!name || !username || !password || !email) {
+    res.render("main/signup", {
+      message: "all fields is required",
+    });
+  }
   user
     .findOne({ email: email })
     .then((u) => {
       if (u) {
-        res.send("this email is used!!");
+        res.render("main/signup", {
+          message: "this email is used maybe you shold login",
+        });
       } else {
         const hash = bcrypt.hashSync(password, saltRounds);
         const code = Math.floor(Math.random() * 10000);
         const hashedCode = bcrypt.hashSync(code.toString(), 10);
         console.log(hashedCode);
         const newUser = new user({
-          firstname: firstname,
-          lastname: lastname,
+          name: name,
+          username: username,
           password: hash,
           email: email,
           role: role,
@@ -61,7 +68,7 @@ exports.signUp = (req, res, next) => {
       return sendEmail(u.email, link);
     })
     .then((result) => {
-      res.send(result);
+      res.redirect("/");
     })
     .catch((err) => {
       console.log(err);
@@ -87,6 +94,11 @@ exports.emailConfirm = (req, res, next) => {
 exports.signIn = (req, res, next) => {
   const email = req.body.email;
   const password = req.body.password;
+  if (!email || !password) {
+    res.render("main/login", {
+      message: "all fields is required",
+    });
+  }
   user
     .findOne({ email: email })
     .then((u) => {
@@ -99,16 +111,34 @@ exports.signIn = (req, res, next) => {
               role: u.role,
             };
             req.session.Auth = auth;
-            res.send("loged in");
+            if (u.role == "admin") {
+              res.redirect("/admin");
+            } else {
+              res.redirect("/");
+            }
           } else {
-            res.send("wrong password");
+            res.render("main/login", {
+              message: "wrong password",
+            });
           }
         });
       } else {
-        res.send("no user with this email");
+        res.render("main/login", {
+          message: "no user with this email",
+        });
       }
     })
     .catch((err) => {
       console.log(err);
     });
+};
+exports.getSignUp = (req, res, next) => {
+  res.render("main/signup.ejs", {
+    message: false,
+  });
+};
+exports.getSignIn = (req, res, next) => {
+  res.render("main/login", {
+    message: false,
+  });
 };

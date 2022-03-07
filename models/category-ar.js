@@ -5,6 +5,10 @@ const prodScema = mongoose.Schema({
     ar: String,
     en: String,
   },
+  desc: {
+    ar: String,
+    en: String,
+  },
   quant: {
     type: Number,
     required: true,

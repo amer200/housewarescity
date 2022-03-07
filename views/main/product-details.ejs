@@ -4,7 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Products Details</title>
+    <title>
+        <%= p.name.lang %>
+    </title>
     <meta name="author" content="Vecuro">
     <meta name="description" content="Products Details">
     <meta name="keywords" content="Products Details" />
@@ -14,22 +16,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/img/favicons/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="/assets/img/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
     <!--==============================
@@ -44,17 +46,17 @@
 	    All CSS File
 	============================== -->
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <!-- Fontawesome Icon -->
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome.min.css">
     <!-- Layerslider -->
-    <link rel="stylesheet" href="assets/css/layerslider.min.css">
+    <link rel="stylesheet" href="/assets/css/layerslider.min.css">
     <!-- Magnific Popup -->
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="/assets/css/magnific-popup.min.css">
     <!-- Slick Slider -->
-    <link rel="stylesheet" href="assets/css/slick.min.css">
+    <link rel="stylesheet" href="/assets/css/slick.min.css">
     <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 
 </head>
 
@@ -80,7 +82,7 @@
     <div class="preloader  ">
         <button class="vs-btn preloaderCls">Cancel Preloader </button>
         <div class="preloader-inner">
-            <img src="assets/img/logo.png" alt="Vendora">
+            <img src="/assets/img/logo.png" alt="Vendora">
             <span class="loader"></span>
         </div>
     </div>
@@ -89,7 +91,7 @@
         <div class="popup-newsletter">
             <button class="popup-newsletter-closer"><i class="fal fa-times"></i></button>
             <div class="newsletter-img">
-                <img src="assets/img/banner/popup-banner-1.jpg" alt="Banner">
+                <img src="/assets/img/banner/popup-banner-1.jpg" alt="Banner">
             </div>
             <div class="newsletter-content">
                 <span class="newsletter-subtitle">Newsletter</span>
@@ -108,7 +110,7 @@
         <div class="vs-menu-area text-center">
             <button class="vs-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="index.html"><img src="assets/img/logo-mobile.png" alt="Vendora"></a>
+                <a href="index.html"><img src="/assets/img/logo-mobile.png" alt="Vendora"></a>
             </div>
             <!-- هذا لسته تطلع اذا كانت الصفحة صغيره -->
             <div class="vs-mobile-menu">
@@ -134,11 +136,11 @@
                     <li>
                         <a href="about.html">About Us</a>
                     </li>
-                    
+
                     </li>
                     <li class="menu-item-has-children">
                         <a href="product.html">Products</a>
-                        <ul class="sub-menu">                            
+                        <ul class="sub-menu">
                             <li><a href="product.html">All Products</a></li>
                             <li><a href="product-details.html">Product Details</a></li>
                             <li><a href="product.html">kitchenware</a></li>
@@ -184,7 +186,8 @@
                         <div class="header-top-links">
                             <ul>
                                 <li>
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">Language</a>
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1"
+                                        data-bs-toggle="dropdown" aria-expanded="false">Language</a>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
                                         <li>
                                             <a href="#">English</a>
@@ -219,7 +222,7 @@
                     <div class="row align-items-center justify-content-between">
                         <div class="col-6 col-sm-auto">
                             <div class="header-logo py-3 py-lg-0">
-                                <a href="index.html"><img src="assets/img/logo.png" alt="Vendora"></a>
+                                <a href="index.html"><img src="/assets/img/logo.png" alt="Vendora"></a>
                             </div>
                         </div>
                         <div class="col-auto d-none d-lg-block">
@@ -307,9 +310,9 @@
                                         </ul>
                                     </li>
                                 -->
-                                <li>
-                                    <a href="#">Catalogs</a>
-                                </li>
+                                    <li>
+                                        <a href="#">Catalogs</a>
+                                    </li>
                                     <li>
                                         <a href="contact.html">Contact Us</a>
                                     </li>
@@ -319,21 +322,27 @@
                         <div class="col-6 col-sm-auto text-end">
                             <div class="header-buttons">
                                 <a href="login.html" class="d-none d-lg-inline-block"><i class="fal fa-user"></i></a>
-                                <a href="#" class="has-badge"><i class="fal fa-heart"></i><span class="badge">0</span></a>
+                                <a href="#" class="has-badge"><i class="fal fa-heart"></i><span
+                                        class="badge">0</span></a>
                                 <div class="header-cart">
-                                    <a href="cart.html" class="has-badge"><i class="fal fa-shopping-bag"></i><span class="badge">0</span></a>
+                                    <a href="cart.html" class="has-badge"><i class="fal fa-shopping-bag"></i><span
+                                            class="badge">0</span></a>
                                     <div class="woocommerce widget_shopping_cart">
                                         <div class="widget_shopping_cart_content">
                                             <ul class="cart_list">
                                                 <li class="mini_cart_item">
                                                     <a href="#" class="remove"><i class="far fa-times"></i></a>
-                                                    <a href="shop-details.html" class="img"><img src="assets/img/cart/cat-img-1.jpg" alt="Cart Image"></a>
+                                                    <a href="shop-details.html" class="img"><img
+                                                            src="/assets/img/cart/cat-img-1.jpg" alt="Cart Image"></a>
                                                     <a href="shop-details.html" class="product-title">Smart Watch</a>
                                                     <span class="amount">$99.00</span>
                                                     <div class="quantity">
-                                                        <button class="quantity-minus qut-btn"><i class="far fa-minus"></i></button>
-                                                        <input type="number" class="qty-input" value="1" min="1" max="99">
-                                                        <button class="quantity-plus qut-btn"><i class="far fa-plus"></i></button>
+                                                        <button class="quantity-minus qut-btn"><i
+                                                                class="far fa-minus"></i></button>
+                                                        <input type="number" class="qty-input" value="1" min="1"
+                                                            max="99">
+                                                        <button class="quantity-plus qut-btn"><i
+                                                                class="far fa-plus"></i></button>
                                                     </div>
                                                     <div class="subtotal">
                                                         <span>Subtotal:</span>
@@ -342,13 +351,17 @@
                                                 </li>
                                                 <li class="mini_cart_item">
                                                     <a href="#" class="remove"><i class="far fa-times"></i></a>
-                                                    <a href="shop-details.html" class="img"><img src="assets/img/cart/cat-img-2.jpg" alt="Cart Image"></a>
+                                                    <a href="shop-details.html" class="img"><img
+                                                            src="/assets/img/cart/cat-img-2.jpg" alt="Cart Image"></a>
                                                     <a href="shop-details.html" class="product-title">Boss Chair</a>
                                                     <span class="amount">$80.00</span>
                                                     <div class="quantity">
-                                                        <button class="quantity-minus qut-btn"><i class="far fa-minus"></i></button>
-                                                        <input type="number" class="qty-input" value="2" min="1" max="99">
-                                                        <button class="quantity-plus qut-btn"><i class="far fa-plus"></i></button>
+                                                        <button class="quantity-minus qut-btn"><i
+                                                                class="far fa-minus"></i></button>
+                                                        <input type="number" class="qty-input" value="2" min="1"
+                                                            max="99">
+                                                        <button class="quantity-plus qut-btn"><i
+                                                                class="far fa-plus"></i></button>
                                                     </div>
                                                     <div class="subtotal">
                                                         <span>Subtotal:</span>
@@ -378,15 +391,19 @@
     <!--==============================
     Breadcumb
 ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="assets/img/breadcumb/bredcumb-1.png">
+    <div class="breadcumb-wrapper " data-bg-src="<%=p.imgs[0]%>">
         <div class="container z-index-common">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Men's Office Shoes</h1>
+                <h1 class="breadcumb-title">
+                    <%= p.name[lang]%>
+                </h1>
             </div>
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li class="active">Men's Office Shoes</li>
+                    <li class="active">
+                        <%= p.name[lang]%>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -400,63 +417,54 @@
                 <div class="col-lg-6">
                     <div class="product-details-img product-img">
                         <div class="product-big-slide">
-                            <div>
-                                <div class="img"><img src="assets/img/product/p-d-1.jpg" alt="Product Image"><span class="product-label style3">-30%</span></div>
-                            </div>
-                            <div>
-                                <div class="img"><img src="assets/img/product/p-d-2.jpg" alt="Product Image"><span class="product-label style3">-30%</span></div>
-                            </div>
-                            <div>
-                                <div class="img"><img src="assets/img/product/p-d-3.jpg" alt="Product Image"><span class="product-label style3">-30%</span></div>
-                            </div>
-                            <div>
-                                <div class="img"><img src="assets/img/product/p-d-4.jpg" alt="Product Image"><span class="product-label style3">-30%</span></div>
-                            </div>
-                            <div>
-                                <div class="img"><img src="assets/img/product/p-d-5.jpg" alt="Product Image"><span class="product-label style3">-30%</span></div>
-                            </div>
+                            <% p.imgs.forEach( i=>{ %>
+                                <div>
+                                    <div class="img"><img src="<%=i %>" alt="Product Image"><span
+                                            class="product-label style3">-<%=p.offer%>%</span></div>
+                                </div>
+                                <%})%>
                         </div>
                         <div class="product-thumb-slide">
-                            <div>
-                                <div class="thumb"><img src="assets/img/product/p-d-t-1.jpg" alt="Product Thumb"></div>
-                            </div>
-                            <div>
-                                <div class="thumb"><img src="assets/img/product/p-d-t-2.jpg" alt="Product Thumb"></div>
-                            </div>
-                            <div>
-                                <div class="thumb"><img src="assets/img/product/p-d-t-3.jpg" alt="Product Thumb"></div>
-                            </div>
-                            <div>
-                                <div class="thumb"><img src="assets/img/product/p-d-t-4.jpg" alt="Product Thumb"></div>
-                            </div>
-                            <div>
-                                <div class="thumb"><img src="assets/img/product/p-d-t-5.jpg" alt="Product Thumb"></div>
-                            </div>
+                            <%p.imgs.forEach( i=>{%>
+                                <div>
+                                    <div class="thumb"><img src="<%=i%>" alt="Product Thumb">
+                                    </div>
+                                </div>
+                                <%}) %>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="product-about">
-                        <p class="price">$50.00 <del>$70.00</del></p>
-                        <h2 class="product-title"><a href="shop.html">Men's Office Shoes</a></h2>
-                        <div class="product-rating">
+                        <p class="price">$<%=p.price - (p.price*p.offer)/100%> <del>$<%=p.price%></del></p>
+                        <h2 class="product-title"><a href="shop.html">
+                                <%= p.name[lang] %>
+                            </a></h2>
+                        <!-- <div class="product-rating">
                             <div class="review-rating-average">5.00</div>
                             <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">1</span> customer rating</span>
+                                <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on
+                                    <span class="rating">1</span> customer rating</span>
                             </div>
-                            <a href="#question" class="woocommerce-review-link">(<span class="count">2</span> Customer Review)</a>
-                        </div>
+                            <a href="#question" class="woocommerce-review-link">(<span class="count">2</span> Customer
+                                Review)</a>
+                        </div> -->
                         <div class="product-info-list">
                             <ul>
                                 <li><i class="fal fa-redo-alt"></i>30 Day Return Policy</li>
                                 <li><i class="fal fa-badge-dollar"></i>Cash on Delivery available</li>
                             </ul>
                         </div>
-                        <p class="text">Enthusiastically architect visionary products after client-focused relationships. Synergistically cultivate vertical users before integrated quality vectors. Holisticly reconceptualize flexible markets after 24/365 paradigms.</p>
+                        <p class="text">
+                            <%= p.desc[lang] %>
+                        </p>
                         <div class="quantity style3">
-                            <label class="screen-reader-text" for="product007">Quantity</label>
+                            <label class="screen-reader-text" for="product007">
+                                <%= p.quant %>
+                            </label>
                             <button class="quantity-minus qut-btn"><i class="far fa-minus"></i></button>
-                            <input type="number" id="product007" class="qty-input" step="1" min="1" max="100" name="quantity" value="1" title="Qty">
+                            <input type="number" id="product007" class="qty-input" step="1" min="1" max="100"
+                                name="quantity" value="1" title="Qty">
                             <button class="quantity-plus qut-btn"><i class="far fa-plus"></i></button>
                         </div>
                         <div class="actions">
@@ -467,33 +475,46 @@
                         <div class="product-accordion accordion" id="productAccordion">
                             <div class="accordion-item">
                                 <div class="accordion-header" id="accordionOne">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                         Products Details
                                     </button>
                                 </div>
-                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="accordionOne" data-bs-parent="#productAccordion">
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="accordionOne"
+                                    data-bs-parent="#productAccordion">
                                     <div class="accordion-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                                            ultrices gravida.</p>
                                         <div class="mt-20 mb-20">
-                                            <img src="assets/img/product/p-d-6.jpg" alt="Image">
+                                            <img src="/assets/img/product/p-d-6.jpg" alt="Image">
                                         </div>
-                                        <p>Nulla facilisi. In hac habitasse platea dictumst. Integer fermentum tincidunt arcu, ut blandit mi. Vivamus quam lorem, facilisis eu aliquam sed, pellentesque quis ipsum. Pellentesque ex dolor, consectetur non hendrerit et, convallis ornare velit</p>
+                                        <p>Nulla facilisi. In hac habitasse platea dictumst. Integer fermentum tincidunt
+                                            arcu, ut blandit mi. Vivamus quam lorem, facilisis eu aliquam sed,
+                                            pellentesque quis ipsum. Pellentesque ex dolor, consectetur non hendrerit
+                                            et, convallis ornare velit</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="accordion-item">
                                 <div class="accordion-header" id="accordionTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                         How To Use
                                     </button>
                                 </div>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="accordionTwo" data-bs-parent="#productAccordion">
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="accordionTwo"
+                                    data-bs-parent="#productAccordion">
                                     <div class="accordion-body">
                                         <div class="mt-20 mb-20 position-relative">
-                                            <img src="assets/img/product/p-d-7.jpg" alt="Image" class="w-100">
-                                            <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn position-center popup-video"><i class="fas fa-play"></i></a>
+                                            <img src="/assets/img/product/p-d-7.jpg" alt="Image" class="w-100">
+                                            <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
+                                                class="play-btn position-center popup-video"><i
+                                                    class="fas fa-play"></i></a>
                                         </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
+                                            ultrices gravida.</p>
                                     </div>
                                 </div>
                             </div>
@@ -504,15 +525,17 @@
         </div>
         <div class="position-relative">
             <div class="product-details-inner">
-                <div class="bg-shape"><img src="assets/img/product/p-d-shape-1.png" alt="Shape"></div>
-                <div class="bg-shape2"><img src="assets/img/product/p-d-shape-2.png" alt="Shape"></div>
+                <div class="bg-shape"><img src="/assets/img/product/p-d-shape-1.png" alt="Shape"></div>
+                <div class="bg-shape2"><img src="/assets/img/product/p-d-shape-2.png" alt="Shape"></div>
                 <div class="container">
                     <ul class="nav product-tab-style1" id="productTab" role="tablist">
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link active" id="reviews-tab" data-bs-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Customer Reviews</a>
+                            <a class="nav-link active" id="reviews-tab" data-bs-toggle="tab" href="#reviews" role="tab"
+                                aria-controls="reviews" aria-selected="false">Customer Reviews</a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link " id="question-tab" data-bs-toggle="tab" href="#question" role="tab" aria-controls="question" aria-selected="true">Question</a>
+                            <a class="nav-link " id="question-tab" data-bs-toggle="tab" href="#question" role="tab"
+                                aria-controls="question" aria-selected="true">Question</a>
                         </li>
                     </ul>
                     <div class="row gx-40">
@@ -522,10 +545,12 @@
                                     <div class="reviews-summary__average">5.00</div>
                                     <div class="reviews-summary__rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                            <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">1</span> customer rating</span>
+                                            <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5
+                                                based on <span class="rating">1</span> customer rating</span>
                                         </div>
                                     </div>
-                                    <div class="reviews-summary__count">2 Reviews, <span class="question-count">0</span> Q &amp; As </div>
+                                    <div class="reviews-summary__count">2 Reviews, <span class="question-count">0</span>
+                                        Q &amp; As </div>
                                 </div>
                                 <div class="reviews-summary__bars">
                                     <div class="reviews-bar">
@@ -572,9 +597,11 @@
                         </div>
                         <div class="col-lg-8">
                             <div class="tab-content" id="productTabContent">
-                                <div class="tab-pane show active" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                                <div class="tab-pane show active" id="reviews" role="tabpanel"
+                                    aria-labelledby="reviews-tab">
                                     <div class="product-reviews">
-                                        <div class="reviews-note">Only logged in customers who have purchased this product may leave a review.</div>
+                                        <div class="reviews-note">Only logged in customers who have purchased this
+                                            product may leave a review.</div>
                                         <form action="#" class="review-form" id="review_form">
                                             <div id="respond" class="comment-respond">
                                                 <div class="row gx-20">
@@ -593,16 +620,20 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12 form-group">
-                                                        <input type="text" placeholder="Review Title" class="form-control">
+                                                        <input type="text" placeholder="Review Title"
+                                                            class="form-control">
                                                     </div>
                                                     <div class="col-12 form-group">
-                                                        <textarea placeholder="Write a Review" class="form-control"></textarea>
+                                                        <textarea placeholder="Write a Review"
+                                                            class="form-control"></textarea>
                                                     </div>
                                                     <div class="col-md-6 form-group">
-                                                        <input type="text" placeholder="Enter Your Name*" class="form-control">
+                                                        <input type="text" placeholder="Enter Your Name*"
+                                                            class="form-control">
                                                     </div>
                                                     <div class="col-md-6 form-group">
-                                                        <input type="email" placeholder="Enter Your Email*" class="form-control">
+                                                        <input type="email" placeholder="Enter Your Email*"
+                                                            class="form-control">
                                                     </div>
                                                     <div class="col-12 form-group">
                                                         <button class="vs-btn style7">Post Comment</button>
@@ -614,13 +645,15 @@
                                         <div class="vs-review">
                                             <div class="vs-review__top">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
-                                                    <span style="width:100%">Rated <strong class="rating">5.00</strong> out of 5 based on <span class="rating">1</span> customer rating</span>
+                                                    <span style="width:100%">Rated <strong class="rating">5.00</strong>
+                                                        out of 5 based on <span class="rating">1</span> customer
+                                                        rating</span>
                                                 </div>
                                                 <span class="date">June 9, 2022 at 7:29 am</span>
                                             </div>
                                             <div class="vs-review__author">
                                                 <div class="vs-review__avater">
-                                                    <img src="assets/img/product/review-author.jpg" alt="Author">
+                                                    <img src="/assets/img/product/review-author.jpg" alt="Author">
                                                 </div>
                                                 <div class="media-body">
                                                     <h4 class="vs-review__name">Sowat Ahsan</h4>
@@ -628,7 +661,12 @@
                                                 </div>
                                             </div>
                                             <h4 class="vs-review__title">Good as light coverage</h4>
-                                            <p class="vs-review__text">Distinctively brand optimal e-tailers for worldwide networks. Appropriately matrix tactical portals before 2.0 relationships. Professionally enable functional results after world-class networks. Collaboratively productivate excellent leadership skills for resource maximizing intellectual capital. Continually conceptualize transparent data without magnetic resources.</p>
+                                            <p class="vs-review__text">Distinctively brand optimal e-tailers for
+                                                worldwide networks. Appropriately matrix tactical portals before 2.0
+                                                relationships. Professionally enable functional results after
+                                                world-class networks. Collaboratively productivate excellent leadership
+                                                skills for resource maximizing intellectual capital. Continually
+                                                conceptualize transparent data without magnetic resources.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -637,13 +675,16 @@
                                         <div id="rdespond" class="comment-respond">
                                             <div class="row gx-20">
                                                 <div class="col-md-6 form-group">
-                                                    <input type="text" placeholder="Enter Your Name*" class="form-control">
+                                                    <input type="text" placeholder="Enter Your Name*"
+                                                        class="form-control">
                                                 </div>
                                                 <div class="col-md-6 form-group">
-                                                    <input type="email" placeholder="Enter Your Email*" class="form-control">
+                                                    <input type="email" placeholder="Enter Your Email*"
+                                                        class="form-control">
                                                 </div>
                                                 <div class="col-12 form-group">
-                                                    <textarea placeholder="Write your question*" class="form-control"></textarea>
+                                                    <textarea placeholder="Write your question*"
+                                                        class="form-control"></textarea>
                                                 </div>
                                                 <div class="col-12 form-group">
                                                     <button class="vs-btn style7">Post Comment</button>
@@ -664,92 +705,36 @@
                 <p class="sub-title-style3">Experts Teams</p>
             </div>
             <div class="row vs-carousel" data-slide-show="4" data-lg-slide-show="3" data-md-slide-show="3">
-                <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-                    <div class="vs-product product_layout4">
-                        <div class="product-img">
-                            <div class="product-label">New</div>
-                            <img src="assets/img/product/product-2-1.jpg" alt="Product">
-                            <div class="actions">
-                                <a href="cart.html" class="icon-btn style2"><i class="fal fa-shopping-bag"></i></a>
-                                <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
-                                <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
+                <%moreP.forEach( p=>{ %>
+                    <div class="col-6 col-md-4 col-lg-4 col-xl-3">
+                        <div class="vs-product product_layout4">
+                            <div class="product-img">
+                                <img src="<%=p.imgs[0]%>" alt="Product">
+                                <div class="actions">
+                                    <a href="cart.html" class="icon-btn style2"><i class="fal fa-shopping-bag"></i></a>
+                                    <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
+                                    <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="product-content">
-                            <div class="product-category">
-                                <a href="#">Men Shoes</a>
+                            <div class="product-content">
+                                <!-- <div class="product-category">
+                                    <a href="#">Men Shoes</a>
+                                </div> -->
+                                <h3 class="product-title"><a href="shop-details.html">
+                                        <%=p.name[lang]%>
+                                    </a></h3>
+                                <!-- <div class="product-price">$123.00</div> -->
                             </div>
-                            <h3 class="product-title"><a href="shop-details.html">Key Chains transparent</a></h3>
-                            <div class="product-price">$123.00</div>
                         </div>
                     </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-                    <div class="vs-product product_layout4">
-                        <div class="product-img">
-                            <div class="product-label">New</div>
-                            <img src="assets/img/product/product-2-2.jpg" alt="Product">
-                            <div class="actions">
-                                <a href="cart.html" class="icon-btn style2"><i class="fal fa-shopping-bag"></i></a>
-                                <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
-                                <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <div class="product-category">
-                                <a href="#">Men Shoes</a>
-                            </div>
-                            <h3 class="product-title"><a href="shop-details.html">iPhone Headset Bluetooth</a></h3>
-                            <div class="product-price">$236.00</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-                    <div class="vs-product product_layout4">
-                        <div class="product-img">
-                            <div class="product-label">New</div>
-                            <img src="assets/img/product/product-2-3.jpg" alt="Product">
-                            <div class="actions">
-                                <a href="cart.html" class="icon-btn style2"><i class="fal fa-shopping-bag"></i></a>
-                                <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
-                                <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <div class="product-category">
-                                <a href="#">Men Shoes</a>
-                            </div>
-                            <h3 class="product-title"><a href="shop-details.html">Handbag Leather Cloth</a></h3>
-                            <div class="product-price">$230.00</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-                    <div class="vs-product product_layout4">
-                        <div class="product-img">
-                            <img src="assets/img/product/product-2-4.jpg" alt="Product">
-                            <div class="actions">
-                                <a href="cart.html" class="icon-btn style2"><i class="fal fa-shopping-bag"></i></a>
-                                <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
-                                <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
-                            </div>
-                        </div>
-                        <div class="product-content">
-                            <div class="product-category">
-                                <a href="#">Men Shoes</a>
-                            </div>
-                            <h3 class="product-title"><a href="shop-details.html">Pink Womens Neckles</a></h3>
-                            <div class="product-price">$159.00</div>
-                        </div>
-                    </div>
-                </div>
+                    <%})%>
             </div>
         </div>
     </section>
     <!--==============================
 			Footer Area
 	==============================-->
-    <footer class="footer-wrapper footer-layout3" data-bg-src="assets/img/bg/footer-bg-3-1.jpg">
+    <footer class="footer-wrapper footer-layout3" data-bg-src="/assets/img/bg/footer-bg-3-1.jpg">
         <div class="widget-area">
             <div class="container">
                 <div class="row justify-content-between">
@@ -812,10 +797,12 @@
             <div class="copyright-wrap text-center">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-md-auto">
-                        <p class="mb-0"><i class="fal fa-copyright"></i> 2022 <a class="text-reset" href="index.html">Vendora</a>. All rights reserved by <a class="text-reset" href="https://themeforest.net/user/vecuro">Vecuro</a>.</p>
+                        <p class="mb-0"><i class="fal fa-copyright"></i> 2022 <a class="text-reset"
+                                href="index.html">Vendora</a>. All rights reserved by <a class="text-reset"
+                                href="https://themeforest.net/user/vecuro">Vecuro</a>.</p>
                     </div>
                     <div class="col-md-auto d-none d-md-block">
-                        <img src="assets/img/footer/card-2.png" alt="Footer Image">
+                        <img src="/assets/img/footer/card-2.png" alt="Footer Image">
                     </div>
                 </div>
             </div>
@@ -836,26 +823,26 @@
         All Js File
     ============================== -->
     <!-- Jquery -->
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
     <!-- Slick Slider -->
-    <script src="assets/js/slick.min.js"></script>
+    <script src="/assets/js/slick.min.js"></script>
     <!-- Layerslider -->
-    <script src="assets/js/layerslider.utils.js"></script>
-    <script src="assets/js/layerslider.transitions.js"></script>
-    <script src="assets/js/layerslider.kreaturamedia.jquery.js"></script>
+    <script src="/assets/js/layerslider.utils.js"></script>
+    <script src="/assets/js/layerslider.transitions.js"></script>
+    <script src="/assets/js/layerslider.kreaturamedia.jquery.js"></script>
     <!-- Bootstrap -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
     <!-- Magnific Popup -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
     <!-- Isotope Filter -->
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/js/isotope.pkgd.min.js"></script>
     <!-- Custom Carousel -->
-    <script src="assets/js/vscustom-carousel.min.js"></script>
+    <script src="/assets/js/vscustom-carousel.min.js"></script>
     <!-- Form Js -->
-    <script src="assets/js/ajax-mail.js"></script>
+    <script src="/assets/js/ajax-mail.js"></script>
     <!-- Main Js File -->
-    <script src="assets/js/main.js"></script>
+    <script src="/assets/js/main.js"></script>
 
 </body>
 
