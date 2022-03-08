@@ -10,8 +10,8 @@ route.post("/remove-categ/:categId", adminController.removeCateg);
 // products
 route.get("/prods/:categId", adminController.getCategProd);
 route.post("/add-prod/:categId", adminController.addProd);
-route.get("/add-prod/:categId", adminController.getAddProd);
+// route.get("/add-prod/:categId", adminController.getAddProd);
 route.post("/edit-prod/:prodId/:categId", adminController.editProd);
-route.post("/remove-prod/:prodId", adminController.removeProd);
+route.post("/remove-prod/:prodId/:categId", adminController.removeProd);
 
 module.exports = route;

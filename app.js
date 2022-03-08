@@ -41,6 +41,7 @@ app.use((req, res, next) => {
   if (!res.locals.lang) {
     res.locals.lang = "ar";
   }
+  res.locals.user = req.session.user;
   next();
 });
 // routes

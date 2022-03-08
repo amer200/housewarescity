@@ -105,12 +105,7 @@ exports.signIn = (req, res, next) => {
       if (u) {
         bcrypt.compare(password, u.password, function (err, result) {
           if (result) {
-            const auth = {
-              id: u._id,
-              isactive: u.isactive,
-              role: u.role,
-            };
-            req.session.Auth = auth;
+            req.session.user = u;
             if (u.role == "admin") {
               res.redirect("/admin");
             } else {

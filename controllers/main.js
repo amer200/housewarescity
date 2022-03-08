@@ -1,35 +1,20 @@
 const CategAr = require("../models/category-ar");
 
 exports.getIndex = (req, res, next) => {
-  const lang = req.params.lang;
-  let isOffers;
-  let categName = [];
-  let firstProdCateg = [];
-  let randomProdCateg = [];
-  CategAr.find()
-    .then((c) => {
-      c.forEach((c) => {
-        isOffers = c.prods.filter((p) => {
-          return p.offer > 0;
-        });
-        categName.push({ name: c.name, img: c.img });
-        firstProdCateg.push(c.prods[0]);
-        randomProdCateg.push(
-          c.prods[Math.floor(Math.random() * c.prods.length)]
-        );
+  CategAr.find().then((c) => {
+    let offers = [];
+    c.forEach((c) => {
+      c.prods.forEach((p) => {
+        if (p.offer) {
+          offers.push(p);
+        }
       });
-      console.log(randomProdCateg);
-      res.render("main/index", {
-        offers: isOffers,
-        categName: categName,
-        firstProdCateg: firstProdCateg,
-        randomProd: randomProdCateg,
-        lang: lang,
-      });
-    })
-    .catch((err) => {
-      console.log(err);
     });
+    res.render("main/index", {
+      categs: c,
+      offers: offers,
+    });
+  });
 };
 exports.getProds = (req, res, next) => {
   const categ = req.params.categ;

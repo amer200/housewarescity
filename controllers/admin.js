@@ -1,5 +1,6 @@
 const CategAr = require("../models/category-ar");
 const fs = require("fs");
+const { off } = require("process");
 exports.getIndex = (req, res, next) => {
   CategAr.find()
     .then((c) => {
@@ -79,20 +80,14 @@ exports.getCategProd = (req, res, next) => {
   const categ = req.params.categId;
   CategAr.findById(categ)
     .then((c) => {
-      console.log(c.prods)
       res.render("admin/product-by-categ", {
         prods: c.prods,
+        categ: categ,
       });
     })
     .catch((err) => {
       console.log(err);
     });
-};
-exports.getAddProd = (req, res, next) => {
-  const categId = req.params.categId;
-  res.render("admin/add-product", {
-    categ: categId,
-  });
 };
 exports.addProd = (req, res, next) => {
   const nameAr = req.body.name_ar;
@@ -137,28 +132,39 @@ exports.addProd = (req, res, next) => {
     });
 };
 exports.editProd = (req, res, next) => {
-  const prodId = req.params.prodId;
   const nameAr = req.body.name_ar;
   const nameEn = req.body.name_en;
+  const descAr = req.body.desc_ar;
+  const descEn = req.body.desc_en;
+  const offer = req.body.offer;
   const categId = req.params.categId;
+  const prodId = req.params.prodId;
   const price = req.body.price;
   const quant = req.body.quant;
   const imgs = req.files;
   const imgsPath = [];
-  //   imgs.forEach((i) => {
-  //     imgsPath.push(i.path);
-  //   });
+  if (imgs) {
+    imgs.forEach((i) => {
+      imgsPath.push(i.path);
+    });
+  }
   CategAr.findById(categId)
     .then((c) => {
       const oldProd = c.prods.id(prodId);
-      oldProd.name.ar = nameAR;
+      oldProd.name.ar = nameAr;
       oldProd.name.en = nameEn;
+      oldProd.desc.ar = descAr;
+      oldProd.desc.en = descEn;
+      oldProd.offer = offer;
       oldProd.price = price;
       oldProd.quant = quant;
+      if (imgs) {
+        oldProd.imgs = imgsPath;
+      }
       return c.save();
     })
     .then((result) => {
-      res.send(result);
+      res.redirect(`/admin/prods/${categId}`);
     })
     .catch((err) => {
       console.log(err);
@@ -169,11 +175,15 @@ exports.removeProd = (req, res, next) => {
   const categId = req.params.categId;
   CategAr.findById(categId)
     .then((c) => {
+      const imgsPath = c.prods.id(prodId).imgs;
+      imgsPath.forEach((i) => {
+        fs.unlink(i, () => {});
+      });
       c.prods.id(prodId).remove();
       return c.save();
     })
     .then((result) => {
-      res.send(result);
+      res.redirect(`/admin/prods/${categId}`);
     })
     .catch((err) => {
       console.log(err);
