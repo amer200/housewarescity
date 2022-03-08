@@ -1,6 +1,6 @@
 const CategAr = require("../models/category-ar");
+const Team = require("../models/team");
 const fs = require("fs");
-const { off } = require("process");
 exports.getIndex = (req, res, next) => {
   CategAr.find()
     .then((c) => {
@@ -12,7 +12,6 @@ exports.getIndex = (req, res, next) => {
       console.log(err);
     });
 };
-
 exports.addCateg = (req, res, next) => {
   const nameAr = req.body.name_ar;
   const nameEn = req.body.name_en;
@@ -184,6 +183,51 @@ exports.removeProd = (req, res, next) => {
     })
     .then((result) => {
       res.redirect(`/admin/prods/${categId}`);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+exports.getTeam = (req, res, next) => {
+  Team.find()
+    .then((t) => {
+      res.render("admin/team", {
+        team: t,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+exports.addTeam = (req, res, next) => {
+  const name = req.body.name;
+  const facebook = req.body.facebook;
+  const twitter = req.body.twitter;
+  const insta = req.body.instagram;
+  const img = req.files[0].path;
+  const job = req.body.job;
+
+  const team = new Team({
+    name: name,
+    facebook: facebook,
+    twitter: twitter,
+    insta: insta,
+    img: img,
+  });
+  team
+    .save()
+    .then((resu) => {
+      res.redirect("/admin/team");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+exports.removeTeam = (req, res, nex) => {
+  const id = req.params.id;
+  Team.findByIdAndDelete(id)
+    .then((resu) => {
+      res.redirect("/admin/team");
     })
     .catch((err) => {
       console.log(err);

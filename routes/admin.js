@@ -13,5 +13,8 @@ route.post("/add-prod/:categId", adminController.addProd);
 // route.get("/add-prod/:categId", adminController.getAddProd);
 route.post("/edit-prod/:prodId/:categId", adminController.editProd);
 route.post("/remove-prod/:prodId/:categId", adminController.removeProd);
-
+// team
+route.get("/team", adminController.getTeam);
+route.post("/add-team", adminController.addTeam);
+route.post("/remove-team/:id", adminController.removeTeam);
 module.exports = route;

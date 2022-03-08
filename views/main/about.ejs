@@ -1,0 +1,372 @@
+<%-include('lay-outs/header.ejs') %>
+    <!--==============================
+    Breadcumb
+============================== -->
+    <div class="breadcumb-wrapper " data-bg-src="/assets/img/breadcumb/bredcumb-1.png">
+        <div class="container z-index-common">
+            <div class="breadcumb-content">
+                <h1 class="breadcumb-title">About Us</h1>
+            </div>
+            <div class="breadcumb-menu-wrap">
+                <ul class="breadcumb-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active">About Us</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--==============================
+    About Us
+    ==============================-->
+    <section class="space-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-6 col-xl-7 mb-30">
+                    <div class="img-box">
+                        <div class="img-1"><img src="/assets/img/about/about-1-1.jpg" alt="About Image"></div>
+                        <div class="img-2"><img src="/assets/img/about/about-1-2.jpg" alt="About Image"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-5 mb-30">
+                    <div class="about-style1">
+                        <h2 class="about-title">Welcome to Al Awani Houseware City Industry</h2>
+                        <p class="about-text">Al Awani Houseware City Industry , was established in 2020 in Jeddah,
+                            affiliated with the Al-Jahoury Group for Industry and Trade. We specialize in the
+                            manufacture and production of utensils and household appliances.
+                            We work on using the latest production technology and the best raw materials. Al-Awan City
+                            Co. proves itself well as one of the best Saudi factories specialized in this field. Through
+                            our experience, we have a distinguished position in the Saudi market.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--==============================
+    Counter Area
+    ==============================-->
+    <div class="space-extra">
+        <div class="container">
+            <div class="row text-center justify-content-between gy-3">
+                <div class="col-sm-auto">
+                    <div class="vs-counter">
+                        <span class="counter-number">60,000</span>
+                        <p class="counter-text">Happy Customers</p>
+                    </div>
+                </div>
+                <div class="col-sm-auto">
+                    <div class="vs-counter">
+                        <span class="counter-number">25k</span>
+                        <p class="counter-text">Daily Visitors</p>
+                    </div>
+                </div>
+                <div class="col-sm-auto">
+                    <div class="vs-counter">
+                        <span class="counter-number">200+</span>
+                        <p class="counter-text">Products Categories</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--==============================
+    Video Area
+    ==============================-->
+    <!--هذا حق الايقونات الصغيره الثلاثه-->
+    <div class="position-relative  ">
+        <img src="/assets/img/about/video-3-1.jpg" alt="Video Image">
+        <a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk" class="play-btn style2 popup-video overlay-center"><i
+                class="fas fa-play"></i></a>
+    </div>
+    <section class="space-extra">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-md-4 col-xl-auto">
+                    <div class="feature_card">
+                        <div class="feature_card_icon">
+                            <img src="/assets/img/icon/feature-1-1.png" alt="feature icon">
+                        </div>
+                        <h3 class="feature_card_title">Mission</h3>
+                        <p class="feature_card_text">Improve household utensils products by examining raw materials and
+                            meticulous follow-up of production stages to provide high quality products.
+                            We are proud to present these products to the Saudi community to be part of its economy.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xl-auto">
+                    <div class="feature_card">
+                        <div class="feature_card_icon">
+                            <img src="/assets/img/icon/feature-1-2.png" alt="feature icon">
+                        </div>
+                        <h3 class="feature_card_title">Vision</h3>
+                        <p class="feature_card_text">Maintaining the company's distinguished level in the local market,
+                            we believe development and modern technology are significant to success and distinction.
+                            We invest in this field to achieve leadership in manufacturing household utensils.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xl-auto">
+                    <div class="feature_card">
+                        <div class="feature_card_icon">
+                            <img src="/assets/img/icon/feature-1-3.png" alt="feature icon">
+                        </div>
+                        <h3 class="feature_card_title">Our message</h3>
+                        <p class="feature_card_text">To provide our customers with high-quality products that meet their
+                            needs at competitive prices and manage our brand by investing in our human resources and
+                            using the best technology in the industry to maintain our image as a reliable factory.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--==============================
+    Team Area
+    ==============================-->
+    <section class="space-top space-extra-bottom">
+        <div class="container">
+            <div class="title-area text-center">
+                <h2 class="sec-title-style5">Founding Members</h2>
+                <p class="sub-title-style5">Experts Teams</p>
+            </div>
+            <div class="row vs-carousel" data-slide-show="3" data-md-slide-show="3" data-xs-slide-show="1">
+                <% team.forEach( t=>{ %>
+                    <div class="col-sm-6 col-md-4 col-lg-4">
+                        <div class="team-style2">
+                            <div class="team-img">
+                                <span class="team-border"></span>
+                                <img src="/<%=t.img%>" alt="TEam Image">
+                                <div class="team-social">
+                                    <a href="<%=t.facebook%>">Facebook</a>
+                                    <a href="<%=t.twitter%>">Twitter</a>
+                                    <a href="<%=t.insta%>">Instagram</a>
+                                </div>
+                            </div>
+                            <div class="team-content">
+                                <h3 class="team-name">
+                                    <%=t.name %>
+                                </h3>
+                                <span class="team-degi">
+                                    <%=t.job %>>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <%})%>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!--==============================
+    Testimonial Area
+    ==============================-->
+    <section class="bg-style3 space">
+        <div class="container">
+            <div class="testi-style2-slide vs-carousel" data-slide-show="1" data-md-slide-show="1"
+                data-sm-slide-show="1" data-xs-slide-show="1" data-dots="true" data-fade="true">
+                <div class="slide">
+                    <div class="testi-style2">
+                        <div class="testi-content">
+                            <img src="/assets/img/icon/quote-3.png" alt="Quote Icon" class="testi-quote">
+                            <p class="testi-text">We provide our products in all regions of the Kingdom and export
+                                outside the Kingdom.
+                                The factory offers many high quality plastic products in terms of durability and
+                                adherence to international specifications of the industry to suit the needs and
+                                requirements of the consumer.
+                            </p>
+                            <div class="testi-border"></div>
+                            <h3 class="testi-author-name">Sowat Ahsan</h3>
+                            <span class="testi-author-degi">Customer</span>
+                        </div>
+                        <div class="testi-avater">
+                            <img src="/assets/img/testimonial/avater-3-1.jpg" alt="Testimonial">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="testi-style2">
+                        <div class="testi-content">
+                            <img src="/assets/img/icon/quote-3.png" alt="Quote Icon" class="testi-quote">
+                            <p class="testi-text">“Lorem ipsum is <u>placeholder text commonly used in the</u> graphic,
+                                print, and publishing industries for previewing layouts and visual mockups tempor
+                                incididunt ut labore magna...”</p>
+                            <div class="testi-border"></div>
+                            <h5 class="testi_card_name--md">Wardan Mofiz</h5>
+                            <span class="testi_card_degi">Customer</span>
+                        </div>
+                        <div class="testi-avater">
+                            <img src="/assets/img/testimonial/avater-3-2.jpg" alt="Testimonial">
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="testi-style2">
+                        <div class="testi-content">
+                            <img src="/assets/img/icon/quote-3.png" alt="Quote Icon" class="testi-quote">
+                            <p class="testi-text">“From its medieval <u>origins to the digital era</u> learn everything
+                                there is to know about the ubiquitous lorem ipsum passage who is thought to have Finibus
+                                the passage experienced...”</p>
+                            <div class="testi-border"></div>
+                            <h5 class="testi_card_name--md">Harry Tube</h5>
+                            <span class="testi_card_degi">Customer</span>
+                        </div>
+                        <div class="testi-avater">
+                            <img src="/assets/img/testimonial/avater-3-3.jpg" alt="Testimonial">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--==============================
+    Brand Area
+    ==============================-->
+    <div class="space">
+        <div class="container">
+            <div class="row justify-content-between vs-carousel text-center" data-slide-show="5" data-md-slide-show="3"
+                data-sm-slide-show="2">
+                <div class="col-auto">
+                    <div class="vs-brand">
+                        <img src="/assets/img/brand/b-4-1.png" alt="Brand image">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="vs-brand">
+                        <img src="/assets/img/brand/b-4-2.png" alt="Brand image">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="vs-brand">
+                        <img src="/assets/img/brand/b-4-3.png" alt="Brand image">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="vs-brand">
+                        <img src="/assets/img/brand/b-4-4.png" alt="Brand image">
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="vs-brand">
+                        <img src="/assets/img/brand/b-4-5.png" alt="Brand image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--==============================
+			Footer Area
+	==============================-->
+    <footer class="footer-wrapper footer-layout3" data-bg-src="/assets/img/bg/footer-bg-3-1.jpg">
+        <div class="widget-area">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-sm-6 col-md-6 col-lg-auto">
+                        <div class="widget  footer-widget">
+                            <h3 class="widget_title">Office</h3>
+                            <div class="vs-widget-about">
+                                <p class="footer-info">29 Holles Place, Dublin 2 D02 YY46</p>
+                                <p class="footer-info">68 Jay Street, Suite 902 New Side Brooklyn, NY 11201</p>
+                                <p class="footer-info">United States</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-auto">
+                        <div class="widget widget_nav_menu  footer-widget">
+                            <h3 class="widget_title">Useful Links</h3>
+                            <div class="menu-all-pages-container">
+                                <ul class="menu">
+                                    <li><a href="#">Customer Rating</a></li>
+                                    <li><a href="#">Top Product</a></li>
+                                    <li><a href="#">Weekly Best Items</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Latest Posts</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-auto">
+                        <div class="widget widget_nav_menu  footer-widget">
+                            <h3 class="widget_title">Quick Links</h3>
+                            <div class="menu-all-pages-container">
+                                <ul class="menu">
+                                    <li><a href="#">Why Buy From Us?</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Store Locator</a></li>
+                                    <li><a href="#">About Blue John</a></li>
+                                    <li><a href="#">About Whitby Jet</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-auto">
+                        <div class="widget widget_nav_menu  footer-widget">
+                            <h3 class="widget_title">Services</h3>
+                            <div class="menu-all-pages-container">
+                                <ul class="menu">
+                                    <li><a href="#">Make an Appointment</a></li>
+                                    <li><a href="#">Jewellery Design Service</a></li>
+                                    <li><a href="#">Jewellery Repairs</a></li>
+                                    <li><a href="#">Price Match Promise</a></li>
+                                    <li><a href="#">Trade Your Watch</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright-wrap text-center">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-md-auto">
+                        <p class="mb-0"><i class="fal fa-copyright"></i> 2022 <a class="text-reset"
+                                href="index.html">Vendora</a>. All rights reserved by <a class="text-reset"
+                                href="https://themeforest.net/user/vecuro">Vecuro</a>.</p>
+                    </div>
+                    <div class="col-md-auto d-none d-md-block">
+                        <img src="/assets/img/footer/card-2.png" alt="Footer Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--********************************
+			Code End  Here 
+	******************************** -->
+
+
+    <!-- Scroll To Top -->
+    <a href="#" class="scrollToTop scroll-btn"><i class="far fa-arrow-up"></i></a>
+
+
+
+    <!--==============================
+        All Js File
+    ============================== -->
+    <!-- Jquery -->
+    <script src="/assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="/assets/js/slick.min.js"></script>
+    <!-- Layerslider -->
+    <script src="/assets/js/layerslider.utils.js"></script>
+    <script src="/assets/js/layerslider.transitions.js"></script>
+    <script src="/assets/js/layerslider.kreaturamedia.jquery.js"></script>
+    <!-- Bootstrap -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="/assets/js/jquery.magnific-popup.min.js"></script>
+    <!-- Isotope Filter -->
+    <script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/js/isotope.pkgd.min.js"></script>
+    <!-- Custom Carousel -->
+    <script src="/assets/js/vscustom-carousel.min.js"></script>
+    <!-- Form Js -->
+    <script src="/assets/js/ajax-mail.js"></script>
+    <!-- Main Js File -->
+    <script src="/assets/js/main.js"></script>
+
+    </body>
+
+    </html>

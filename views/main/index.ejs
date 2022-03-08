@@ -348,10 +348,12 @@
                                     <div class="product-img">
                                         <a href="shop-details.html"><img src="<%=p.imgs[0]%>" alt="featued"></a>
                                         <div class="actions">
-                                            <a href="cart.html" class="icon-btn style2"><i
-                                                    class="fal fa-shopping-bag"></i></a>
-                                            <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
-                                            <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
+                                            <%if(user){%>
+                                                <a href="/add-card/<%=p._id%>/<%=c._id%>/<%=user._id%>"
+                                                    class="icon-btn style2"><i class="fal fa-shopping-bag"></i></a>
+                                                <%}%>
+                                                    <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
+                                                    <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
                                         </div>
                                     </div>
                                     <div class="product-content">

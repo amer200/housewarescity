@@ -116,14 +116,14 @@
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About Us</a>
+                        <a href="/about-us">About Us</a>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="">Products</a>
                         <ul class="sub-menu">
                             <% categs.forEach( c=>{%>
-                                <li><a href="">
-                                        <%=c.name%>
+                                <li><a href="/prods/<%=c._id%>">
+                                        <%=c.name[lang]%>
                                     </a></li>
                                 <%})%>
                         </ul>
@@ -132,7 +132,7 @@
                         <a href="#">Catalogs</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact Us</a>
+                        <a href="/contact">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -163,7 +163,7 @@
                                             <%=user.name %>
                                         </a></li>
                                     <%}else{%>
-                                        <li><a href="/login">
+                                        <li><a href="/user/signin">
                                                 login/ Sign up
                                             </a></li>
                                         <%}%>
@@ -228,75 +228,61 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-auto">
-                                <div class="header-buttons">
-                                    <a href="login.html"><i class="fal fa-user"></i></a>
-                                    <a href="#" class="has-badge"><i class="fal fa-heart"></i><span
-                                            class="badge">0</span></a>
-                                    <div class="header-cart">
-                                        <a href="cart.html" class="has-badge"><i class="fal fa-shopping-bag"></i><span
+                            <%if(user){ %>
+                                <div class="col-auto">
+                                    <div class="header-buttons">
+                                        <a href="#" class="has-badge"><i class="fal fa-heart"></i><span
                                                 class="badge">0</span></a>
-                                        <div class="woocommerce widget_shopping_cart">
-                                            <div class="widget_shopping_cart_content">
-                                                <ul class="cart_list">
-                                                    <li class="mini_cart_item">
-                                                        <a href="#" class="remove"><i class="far fa-times"></i></a>
-                                                        <a href="shop-details.html" class="img"><img
-                                                                src="assets/img/cart/cat-img-1.jpg"
-                                                                alt="Cart Image"></a>
-                                                        <a href="shop-details.html" class="product-title">Smart
-                                                            Watch</a>
-                                                        <span class="amount">$99.00</span>
-                                                        <div class="quantity">
-                                                            <button class="quantity-minus qut-btn"><i
-                                                                    class="far fa-minus"></i></button>
-                                                            <input type="number" class="qty-input" value="1" min="1"
-                                                                max="99">
-                                                            <button class="quantity-plus qut-btn"><i
-                                                                    class="far fa-plus"></i></button>
-                                                        </div>
-                                                        <div class="subtotal">
-                                                            <span>Subtotal:</span>
-                                                            <span class="amount">$99.00</span>
-                                                        </div>
-                                                    </li>
-                                                    <li class="mini_cart_item">
-                                                        <a href="#" class="remove"><i class="far fa-times"></i></a>
-                                                        <a href="shop-details.html" class="img"><img
-                                                                src="assets/img/cart/cat-img-2.jpg"
-                                                                alt="Cart Image"></a>
-                                                        <a href="shop-details.html" class="product-title">Boss Chair</a>
-                                                        <span class="amount">$80.00</span>
-                                                        <div class="quantity">
-                                                            <button class="quantity-minus qut-btn"><i
-                                                                    class="far fa-minus"></i></button>
-                                                            <input type="number" class="qty-input" value="2" min="1"
-                                                                max="99">
-                                                            <button class="quantity-plus qut-btn"><i
-                                                                    class="far fa-plus"></i></button>
-                                                        </div>
-                                                        <div class="subtotal">
-                                                            <span>Subtotal:</span>
-                                                            <span class="amount">$160.00</span>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                                <p class="total">
-                                                    <strong>Subtotal:</strong>
-                                                    <span class="amount">$259.00</span>
-                                                </p>
-                                                <p class="buttons">
-                                                    <a href="cart.html" class="vs-btn">View cart</a>
-                                                    <a href="checkout.html" class="vs-btn checkout">Checkout</a>
-                                                </p>
+                                        <div class="header-cart">
+                                            <a href="" class="has-badge"><i class="fal fa-shopping-bag"></i><span
+                                                    class="badge">
+                                                    <%=user.card.length%>
+                                                </span></a>
+                                            <div class="woocommerce widget_shopping_cart">
+                                                <div class="widget_shopping_cart_content">
+                                                    <ul class="cart_list">
+                                                        <%user.card.forEach( c=>{%>
+                                                            <li class="mini_cart_item">
+                                                                <a href="#" class="remove"><i
+                                                                        class="far fa-times"></i></a>
+                                                                <a href="" class="img"><img src="/<%=c.img%>"
+                                                                        alt="Cart Image"></a>
+                                                                <a href="shop-details.html" class="product-title">
+                                                                    <%=c.name[lang]%>
+                                                                </a>
+                                                                <!-- <span class="amount">$99.00</span> -->
+                                                                <div class="quantity">
+                                                                    <button class="quantity-minus qut-btn"><i
+                                                                            class="far fa-minus"></i></button>
+                                                                    <input type="number" class="qty-input" value="1"
+                                                                        min="1" max="99">
+                                                                    <button class="quantity-plus qut-btn"><i
+                                                                            class="far fa-plus"></i></button>
+                                                                </div>
+                                                                <div class="subtotal">
+                                                                    <span>Subtotal:</span>
+                                                                    <span class="amount">$99.00</span>
+                                                                </div>
+                                                            </li>
+                                                            <%})%>
+                                                    </ul>
+                                                    <!-- <p class="total">
+                                                        <strong>Subtotal:</strong>
+                                                        <span class="amount">$259.00</span>
+                                                    </p> -->
+                                                    <p class="buttons">
+                                                        <a href="/card/<%=user._id%>" class="vs-btn">View cart</a>
+                                                        <a href="checkout.html" class="vs-btn checkout">Checkout</a>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-auto d-block d-lg-none">
-                                <button class="vs-menu-toggle "><i class="fal fa-bars"></i></button>
-                            </div>
+                                <%}%>
+                                    <div class="col-auto d-block d-lg-none">
+                                        <button class="vs-menu-toggle "><i class="fal fa-bars"></i></button>
+                                    </div>
                         </div>
                     </div>
                     <!-- من هنا تقسيم الاقسام-->
@@ -309,26 +295,22 @@
                                             <a href="index.html">Home</a>
                                         </li>
                                         <li>
-                                            <a href="about.html">About Us</a>
+                                            <a href="/about-us">About Us</a>
                                         </li>
                                         <li class="menu-item-has-children">
-                                            <a href="product.html">Products</a>
+                                            <a href="">Products</a>
                                             <ul class="sub-menu">
-                                                <li><a href="product.html">All Products</a></li>
-                                                <li><a href="kitchenware.html">kitchenware</a></li>
-                                                <li><a href="shelves.html">Shelves</a></li>
-                                                <li><a href="chairs.html">Chairs</a></li>
-                                                <li><a href="toys.html">Toys</a></li>
-                                                <li><a href="drawers.html">Drawers</a></li>
-                                                <li><a href="storages.html">Storages</a></li>
-                                                <li><a href="basin.html">Basin</a></li>
-                                                <li><a href="laundry.html">Laundry</a></li>
+                                                <% categs.forEach( c=>{%>
+                                                    <li><a href="/prods/<%=c._id%>">
+                                                            <%=c.name[lang]%>
+                                                        </a></li>
+                                                    <%})%>
                                             </ul>
                                         </li>
                                         <li>
                                             <a href="#">Catalogs</a>
                                         <li>
-                                            <a href="contact.html">Contact Us</a>
+                                            <a href="/contact">Contact Us</a>
                                         </li>
                                     </ul>
                                 </nav>

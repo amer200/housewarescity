@@ -11,6 +11,7 @@ const supported = ["ar", "en"];
 const port = process.env.PORT;
 const dbUrl = process.env.DB_URL;
 const multer = require("multer");
+const CategAr = require("./models/category-ar");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "admin-uploads/");
@@ -29,30 +30,37 @@ app.use(locale(supported, defaultLang));
 app.use("/admin-uploads", express.static("admin-uploads"));
 app.use("/", express.static("public"));
 app.set("view engine", "ejs");
-app.use(
-  session({
-    secret: "secret",
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true, httpOnly: true, maxAge: 1000 * 60 * 60 * 24 },
-  })
-);
+const sessionConfig = {
+  secret: "yourSecret",
+  resave: false,
+  saveUninitialized: false,
+};
+app.use(session(sessionConfig));
 app.use((req, res, next) => {
-  if (!res.locals.lang) {
-    res.locals.lang = "ar";
-  }
+  res.locals.lang = "ar";
   res.locals.user = req.session.user;
+  CategAr.find()
+    .then((c) => {
+      res.locals.categs = c;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   next();
 });
+
 // routes
 const adminRoutes = require("./routes/admin");
 const mainRoutes = require("./routes/main");
 const userRoutes = require("./routes/user");
+const res = require("express/lib/response");
 const isAdmin = require("./controllers/isAdmin").isAdmin;
 app.use("/admin", adminRoutes);
 app.use("/user", userRoutes);
 app.use("/", mainRoutes);
-
+app.use((req, res) => {
+  res.send("Not found !!");
+});
 mongoose
   .connect(dbUrl)
   .then((result) => {

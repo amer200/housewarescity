@@ -405,7 +405,7 @@
                         <div class="col-xl-2">
                             <div class="cat_rounded">
                                 <div class="cat-img">
-                                    <a href="shop.html"><img src="<%=c.img%>" alt="Category"></a>
+                                    <a href="shop.html"><img src="/<%=c.img%>" alt="Category"></a>
                                 </div>
                                 <h3 class="cat-name"><a class="text-inherit" href="shop.html">
                                         <%= (lang=='ar' ) ? c.name.ar: c.name.en %>
@@ -460,11 +460,12 @@
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade active show" id="tab-grid" role="tabpanel" aria-labelledby="tab-shop-grid">
                     <div class="row">
-                        <% prods.forEach( p=>{ %>
+                        <% categ.prods.forEach( p=>{ %>
                             <div class="col-sm-6 col-md-4 col-lg-4 col-xl-3">
                                 <div class="vs-product product_layout4">
                                     <div class="product-img">
-                                        <a href="shop-details.html"><img src="<%= p.imgs[0]%>" alt="Product"></a>
+                                        <a href="/prod/<%=p._id%>/<%=categ._id%>"><img src="/<%= p.imgs[0]%>"
+                                                alt="Product"></a>
                                         <div class="actions">
                                             <a href="cart.html" class="icon-btn style2"><i
                                                     class="fal fa-shopping-bag"></i></a>

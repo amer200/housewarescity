@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>
-        <%= p.name.lang %>
+        <%= prod.name[lang] %>
     </title>
     <meta name="author" content="Vecuro">
     <meta name="description" content="Products Details">
@@ -391,18 +391,18 @@
     <!--==============================
     Breadcumb
 ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="<%=p.imgs[0]%>">
+    <div class="breadcumb-wrapper " data-bg-src="<%=prod.imgs[0]%>">
         <div class="container z-index-common">
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">
-                    <%= p.name[lang]%>
+                    <%= prod.name[lang]%>
                 </h1>
             </div>
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
                     <li><a href="index.html">Home</a></li>
                     <li class="active">
-                        <%= p.name[lang]%>
+                        <%= prod.name[lang]%>
                     </li>
                 </ul>
             </div>
@@ -417,17 +417,17 @@
                 <div class="col-lg-6">
                     <div class="product-details-img product-img">
                         <div class="product-big-slide">
-                            <% p.imgs.forEach( i=>{ %>
+                            <% prod.imgs.forEach( i=>{ %>
                                 <div>
-                                    <div class="img"><img src="<%=i %>" alt="Product Image"><span
-                                            class="product-label style3">-<%=p.offer%>%</span></div>
+                                    <div class="img"><img src="/<%=i %>" alt="Product Image"><span
+                                            class="product-label style3">-<%=prod.offer%>%</span></div>
                                 </div>
                                 <%})%>
                         </div>
                         <div class="product-thumb-slide">
-                            <%p.imgs.forEach( i=>{%>
+                            <%prod.imgs.forEach( i=>{%>
                                 <div>
-                                    <div class="thumb"><img src="<%=i%>" alt="Product Thumb">
+                                    <div class="thumb"><img src="/<%=i%>" alt="Product Thumb">
                                     </div>
                                 </div>
                                 <%}) %>
@@ -436,9 +436,9 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="product-about">
-                        <p class="price">$<%=p.price - (p.price*p.offer)/100%> <del>$<%=p.price%></del></p>
+                        <p class="price">$<%=prod.price - (prod.price*prod.offer)/100%> <del>$<%=prod.price%></del></p>
                         <h2 class="product-title"><a href="shop.html">
-                                <%= p.name[lang] %>
+                                <%= prod.name[lang] %>
                             </a></h2>
                         <!-- <div class="product-rating">
                             <div class="review-rating-average">5.00</div>
@@ -456,11 +456,11 @@
                             </ul>
                         </div>
                         <p class="text">
-                            <%= p.desc[lang] %>
+                            <%= prod.desc[lang] %>
                         </p>
                         <div class="quantity style3">
                             <label class="screen-reader-text" for="product007">
-                                <%= p.quant %>
+                                <%= prod.quant %>
                             </label>
                             <button class="quantity-minus qut-btn"><i class="far fa-minus"></i></button>
                             <input type="number" id="product007" class="qty-input" step="1" min="1" max="100"
@@ -705,29 +705,33 @@
                 <p class="sub-title-style3">Experts Teams</p>
             </div>
             <div class="row vs-carousel" data-slide-show="4" data-lg-slide-show="3" data-md-slide-show="3">
-                <%moreP.forEach( p=>{ %>
-                    <div class="col-6 col-md-4 col-lg-4 col-xl-3">
-                        <div class="vs-product product_layout4">
-                            <div class="product-img">
-                                <img src="<%=p.imgs[0]%>" alt="Product">
-                                <div class="actions">
-                                    <a href="cart.html" class="icon-btn style2"><i class="fal fa-shopping-bag"></i></a>
-                                    <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
-                                    <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
+                <% categs.forEach(c=>{ %>
+                    <%c.prods.forEach( p=>{ %>
+                        <div class="col-6 col-md-4 col-lg-4 col-xl-3">
+                            <div class="vs-product product_layout4">
+                                <div class="product-img">
+                                    <img src="/<%=p.imgs[0]%>" alt="Product">
+                                    <div class="actions">
+                                        <a href="cart.html" class="icon-btn style2"><i
+                                                class="fal fa-shopping-bag"></i></a>
+                                        <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
+                                        <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div class="product-content">
+                                    <!-- <div class="product-category">
+                                <a href="#">Men Shoes</a>
+                            </div> -->
+                                    <h3 class="product-title"><a href="shop-details.html">
+                                            <%=p.name[lang]%>
+                                        </a></h3>
+                                    <!-- <div class="product-price">$123.00</div> -->
                                 </div>
                             </div>
-                            <div class="product-content">
-                                <!-- <div class="product-category">
-                                    <a href="#">Men Shoes</a>
-                                </div> -->
-                                <h3 class="product-title"><a href="shop-details.html">
-                                        <%=p.name[lang]%>
-                                    </a></h3>
-                                <!-- <div class="product-price">$123.00</div> -->
-                            </div>
                         </div>
-                    </div>
-                    <%})%>
+                        <%})%>
+                            <%})%>
+
             </div>
         </div>
     </section>

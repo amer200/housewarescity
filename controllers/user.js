@@ -3,7 +3,6 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const nodemailer = require("nodemailer");
 const ejs = require("ejs");
-
 async function sendEmail(email, link) {
   let transporter = nodemailer.createTransport({
     host: "smtp.ethereal.email",
@@ -68,7 +67,7 @@ exports.signUp = (req, res, next) => {
       return sendEmail(u.email, link);
     })
     .then((result) => {
-      res.redirect("/");
+      res.redirect("/user/login");
     })
     .catch((err) => {
       console.log(err);
@@ -104,17 +103,21 @@ exports.signIn = (req, res, next) => {
     .then((u) => {
       if (u) {
         bcrypt.compare(password, u.password, function (err, result) {
-          if (result) {
-            req.session.user = u;
-            if (u.role == "admin") {
-              res.redirect("/admin");
-            } else {
-              res.redirect("/");
-            }
+          if (err) {
+            console.log(err);
           } else {
-            res.render("main/login", {
-              message: "wrong password",
-            });
+            if (result == true) {
+              req.session.user = u;
+              if (u.role == "admin") {
+                res.redirect("/admin");
+              } else {
+                res.redirect("/");
+              }
+            } else {
+              res.render("main/login", {
+                message: "wrong password",
+              });
+            }
           }
         });
       } else {

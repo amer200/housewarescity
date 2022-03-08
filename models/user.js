@@ -8,6 +8,7 @@ const userSchema = mongoose.Schema({
   isactive: { type: Boolean, required: true },
   role: { type: String },
   code: String,
+  card: [Object],
 });
 
 module.exports = mongoose.model("User", userSchema);
