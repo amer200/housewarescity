@@ -66,7 +66,7 @@ mongoose
   .then((result) => {
     console.log(`db on ${dbUrl}`);
     app.listen(port, (err) => {
-      console.log(`app conected on port ${port}`);
+      console.log(`app conected port ${port}`);
     });
   })
   .catch((err) => {
