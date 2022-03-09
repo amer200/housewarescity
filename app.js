@@ -11,6 +11,7 @@ const supported = ["ar", "en"];
 const port = process.env.PORT;
 const dbUrl = process.env.DB_URL;
 const multer = require("multer");
+const cors = require("cors");
 const CategAr = require("./models/category-ar");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -48,7 +49,7 @@ app.use((req, res, next) => {
     });
   next();
 });
-
+app.use(cors());
 // routes
 const adminRoutes = require("./routes/admin");
 const mainRoutes = require("./routes/main");
