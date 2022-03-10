@@ -52,7 +52,7 @@
                                 <%= c.name.ar %> / <%=c.name.en %>
                                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                                data-bs-target="#edit-categ">تعديل</button>
+                                                data-bs-target="#edit-categ<%=c._id%>">تعديل</button>
                                             <form action="/admin/prods/<%=c._id%>">
                                                 <button type="submit" class="btn btn-success">عرض المنتجات</button>
                                             </form>
@@ -61,7 +61,7 @@
                                                     onclick="removeCategHandler(this)">حذف</button>
                                             </form>
                                             <!-- Modal -->
-                                            <div class="modal fade" id="edit-categ" tabindex="-1"
+                                            <div class="modal fade" id="edit-categ<%=c._id%>" tabindex="-1"
                                                 aria-labelledby="edit-categ" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -88,6 +88,9 @@
                                                                     <input type="text" class="form-control" id="i-1"
                                                                         placeholder="category name"
                                                                         value="<%=c.name.en %>" name="name_en">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <img src="/<%=c.img%>" alt="img">
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label"> صورة مصغرة للقسم

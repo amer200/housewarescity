@@ -76,13 +76,13 @@
                                 <%= c.name.ar %> / <%=c.name.en %>
                                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                                             <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                                data-bs-target="#edit-categ">تعديل</button>
+                                                data-bs-target="#edit-categ<%=c.id%>">تعديل</button>
                                             <form action="/admin/remove-prod/<%=c._id%>/<%=categ%>" method="post">
                                                 <button type="button" class="btn btn-danger"
                                                     onclick="removeCategHandler(this)">حذف</button>
                                             </form>
                                             <!-- Modal -->
-                                            <div class="modal fade" id="edit-categ" tabindex="-1"
+                                            <div class="modal fade" id="edit-categ<%=c.id%>" tabindex="-1"
                                                 aria-labelledby="edit-categ" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -142,6 +142,26 @@
                                                                     <input type="number" class="form-control"
                                                                         placeholder="الخصم بالنسة المئوية" name="offer"
                                                                         value="<%= c.offer %>">
+                                                                </div>
+                                                                <div class="mb-3 row">
+                                                                    <label class="form-label"> صور المنتج</label>
+                                                                    <% c.imgs.forEach( i=>{ %>
+                                                                        <div id="/admin/remove-prod-img/<%=categ%>/<%=c._id%>/<%=i.split('admin-uploads/')[1]%>"
+                                                                            class="col-4">
+                                                                            <img src="/<%=i%>" alt="img" />
+                                                                            <button type="button"
+                                                                                onclick="removeProdImg(this)"
+                                                                                class="btn btn-danger">حذف
+                                                                                الصورة</button>
+                                                                        </div>
+
+                                                                        <%})%>
+
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-label"> صور المنتج (icon)</label>
+                                                                    <input type="file" name="imgsUP" id="i-1"
+                                                                        class="form-control" multiple>
                                                                 </div>
                                                                 <button type="submit" class="btn btn-dark" id="subBtn">
                                                                     حفظ</button>

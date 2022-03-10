@@ -21,7 +21,7 @@ exports.addCateg = (req, res, next) => {
       ar: nameAr,
       en: nameEn,
     },
-    img: img[0].path,
+    img: img[0] ? img[0].path : "",
     prod: [],
   });
   newCateg
@@ -164,6 +164,27 @@ exports.editProd = (req, res, next) => {
     })
     .then((result) => {
       res.redirect(`/admin/prods/${categId}`);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+exports.removeProdImg = (req, res, next) => {
+  const categ = req.params.categId;
+  const prod = req.params.prodId;
+  const imgPath = req.params.imgPath;
+  CategAr.findById(categ)
+    .then((c) => {
+      const p = c.prods.id(prod);
+      let pImgs = p.imgs.filter((i) => {
+        return i !== `admin-uploads/${imgPath}`;
+      });
+      fs.unlink(`admin-uploads/${imgPath}`, () => {});
+      p.imgs = pImgs;
+      return c.save();
+    })
+    .then((resu) => {
+      res.redirect(`/admin/prods/${categ}`);
     })
     .catch((err) => {
       console.log(err);

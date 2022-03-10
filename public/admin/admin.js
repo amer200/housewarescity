@@ -11,3 +11,13 @@ const removeCategHandler = (t) => {
     form.submit();
   }
 };
+const removeProdImg = (t) => {
+  const form = t.parentNode;
+  if (confirm("حذف الصورة")) {
+    fetch(form.id, {
+      method: "POST",
+    }).then((res) => {
+      form.style.display = "none";
+    });
+  }
+};

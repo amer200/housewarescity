@@ -12,6 +12,7 @@ const port = process.env.PORT;
 const dbUrl = process.env.DB_URL;
 const multer = require("multer");
 const cors = require("cors");
+const MongoStore = require("connect-mongo");
 const CategAr = require("./models/category-ar");
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -32,9 +33,10 @@ app.use("/admin-uploads", express.static("admin-uploads"));
 app.use("/", express.static("public"));
 app.set("view engine", "ejs");
 const sessionConfig = {
-  secret: "yourSecret",
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
+  store: MongoStore.create({ mongoUrl: dbUrl }),
 };
 app.use(session(sessionConfig));
 app.use((req, res, next) => {
@@ -56,7 +58,7 @@ const mainRoutes = require("./routes/main");
 const userRoutes = require("./routes/user");
 const res = require("express/lib/response");
 const isAdmin = require("./controllers/isAdmin").isAdmin;
-app.use("/admin", adminRoutes);
+app.use("/admin", isAdmin, adminRoutes);
 app.use("/user", userRoutes);
 app.use("/", mainRoutes);
 app.use((req, res) => {

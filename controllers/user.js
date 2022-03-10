@@ -67,7 +67,7 @@ exports.signUp = (req, res, next) => {
       return sendEmail(u.email, link);
     })
     .then((result) => {
-      res.redirect("/user/login");
+      res.redirect("/user/signin");
     })
     .catch((err) => {
       console.log(err);
