@@ -99,6 +99,17 @@ exports.addProd = (req, res, next) => {
   const quant = req.body.quant;
   const imgs = req.files;
   const imgsPath = [];
+  const itemno = req.body.item_no;
+  const dimentions = {
+    w: req.body.w,
+    h: req.body.h,
+    l: req.body.l,
+    pcs_ctn: req.body.pcs_ctn,
+    weight: req.body.weight,
+    cbm: req.body.cbm,
+    pcs_20ft: req.body.pcs_20ft,
+    pc_40ft: req.body.pc_40ft,
+  };
   if (imgs) {
     imgs.forEach((i) => {
       imgsPath.push(i.path);
@@ -117,6 +128,8 @@ exports.addProd = (req, res, next) => {
     quant: quant,
     imgs: imgsPath,
     offer: offer,
+    itemno: itemno,
+    dimentions: dimentions,
   };
   CategAr.findById(categId)
     .then((c) => {
@@ -141,6 +154,17 @@ exports.editProd = (req, res, next) => {
   const price = req.body.price;
   const quant = req.body.quant;
   const imgs = req.files;
+  const itemno = req.body.item_no;
+  const dimentions = {
+    w: req.body.w,
+    h: req.body.h,
+    l: req.body.l,
+    pcs_ctn: req.body.pcs_ctn,
+    weight: req.body.weight,
+    cbm: req.body.cbm,
+    pcs_20ft: req.body.pcs_20ft,
+    pc_40ft: req.body.pc_40ft,
+  };
   const imgsPath = [];
   if (imgs) {
     imgs.forEach((i) => {
@@ -157,6 +181,8 @@ exports.editProd = (req, res, next) => {
       oldProd.offer = offer;
       oldProd.price = price;
       oldProd.quant = quant;
+      oldProd.itemno = itemno;
+      oldProd.dimentions = dimentions;
       if (imgs) {
         oldProd.imgs = imgsPath;
       }
