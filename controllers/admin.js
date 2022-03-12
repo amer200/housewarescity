@@ -205,7 +205,7 @@ exports.editProd = (req, res, next) => {
       oldProd.itemno = itemno;
       oldProd.dimentions = dimentions;
       if (imgs) {
-        oldProd.imgs = imgsPath;
+        oldProd.imgs.push(...imgsPath);
       }
       return c.save();
     })
@@ -222,15 +222,14 @@ exports.searchProd = (req, res, next) => {
   CategAr.findById(categ)
     .then((c) => {
       c.prods.forEach((p) => {
-        if ((p.name.ar = prod) || (p.name.en = prod)) {
+        if ((p.itemno == prod)) {
           let foundprod = p;
-          console.log(prod);
           return res.render("admin/edit-prod", {
             p: foundprod,
             categ: categ,
           });
         } else {
-          const msg = "لا يوجد منتج بهذا الاسم";
+          const msg = "لا يوجد منتج بهذا الرقم";
           req.session.errMsg = msg;
           return res.redirect(`/admin/prods/${categ}`);
         }
