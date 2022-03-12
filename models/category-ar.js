@@ -18,6 +18,8 @@ const prodScema = mongoose.Schema({
     required: true,
   },
   imgs: [String],
+  itemno: String,
+  dimentions: Object,
   offer: Number,
 });
 const categorySchema = mongoose.Schema({

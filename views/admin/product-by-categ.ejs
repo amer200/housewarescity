@@ -44,6 +44,40 @@
                                         name="desc_en">
                                 </div>
                                 <div class="mb-3">
+                                    <label class="form-lable">item-no</label>
+                                    <input type="text" class="form-control" style="width: 33.3333333%;" name="item_no"
+                                        placeholder="item-no">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="form-lable">package dimentions</label>
+                                    <div class="container">
+                                        <div class="row">
+                                            <input type="text" class="form-control col-4" placeholder="W" name="w"
+                                                style="width:30%; margin: 5px">
+                                            <input type="text" class="form-control col-4" placeholder="H" name="h"
+                                                style="width:30%; margin: 5px">
+                                            <input type="text" class="form-control col-4" placeholder="L" name="l"
+                                                style="width:30%; margin: 5px">
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" class="form-control" placeholder="Pcs/Ctn" name="pcs_ctn"
+                                                style="width: 30%; margin: 5px;">
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" class="form-control" placeholder="weigth" name="weight"
+                                                style="width: 47%; margin: 5px;">
+                                            <input type="text" class="form-control" placeholder="CBM" name="cbm"
+                                                style="width: 47%; margin: 5px;">
+                                        </div>
+                                        <div class="row">
+                                            <input type="text" class="form-control" placeholder="Pcs_20ft"
+                                                name="pcs_20ft" style="width: 47%; margin:5px;">
+                                            <input type="text" class="form-control" placeholder="Pc/40ft" name="pc_40ft"
+                                                style="width: 47%; margin:5px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
                                     <label class="form-label">الكمية</label>
                                     <input type="number" class="form-control" placeholder="الكمية المتاحة من المنتج"
                                         name="quant">
@@ -124,6 +158,60 @@
                                                                     <input type="text" class="form-control" id="i-1"
                                                                         placeholder="product description" name="desc_en"
                                                                         value="<%=c.desc.en %>">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label class="form-lable">item-no</label>
+                                                                    <input type="text" class="form-control"
+                                                                        style="width: 33.3333333%;" name="item_no"
+                                                                        placeholder="item-no" value="<%=c.itmeno%>">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="form-lable">package dimentions</label>
+                                                                    <div class="container">
+                                                                        <div class="row">
+                                                                            <input type="text"
+                                                                                class="form-control col-4"
+                                                                                placeholder="W" name="w"
+                                                                                style="width:30%; margin: 5px"
+                                                                                value="<%=(c.dimentions)? c.dimentions.w: ''%>">
+                                                                            <input type="text"
+                                                                                class="form-control col-4"
+                                                                                placeholder="H" name="h"
+                                                                                style="width:30%; margin: 5px"
+                                                                                value="<%=(c.dimentions)? c.dimentions.h: ''%>">
+                                                                            <input type="text"
+                                                                                class="form-control col-4"
+                                                                                placeholder="L" name="l"
+                                                                                style="width:30%; margin: 5px"
+                                                                                value="<%=(c.dimentions)? c.dimentions.l: ''%>">
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Pcs/Ctn" name="pcs_ctn"
+                                                                                style="width: 30%; margin: 5px;"
+                                                                                value="<%=(c.dimentions)? c.dimentions.pcs_ctn: ''%>">
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="weigth" name="weight"
+                                                                                style="width: 47%; margin: 5px;"
+                                                                                value="<%=(c.dimentions)? c.dimentions.weight: ''%>">
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="CBM" name="cbm"
+                                                                                style="width: 47%; margin: 5px;"
+                                                                                value="<%=(c.dimentions)? c.dimentions.cbm: ''%>">
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Pcs_20ft" name="pcs_20ft"
+                                                                                style="width: 47%; margin:5px;"
+                                                                                value="<%=(c.dimentions)? c.dimentions.pcs_20ft: ''%>">
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Pc/40ft" name="pc_40ft"
+                                                                                style="width: 47%; margin:5px;"
+                                                                                value="<%=(c.dimentions)? c.dimentions.pc_40ft: ''%>">
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label class="form-label">الكمية</label>
