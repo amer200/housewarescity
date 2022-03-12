@@ -14,6 +14,7 @@ route.post(
   "/remove-prod-img/:categId/:prodId/:imgPath",
   adminController.removeProdImg
 );
+route.post("/get-edit-search-prod/:categId", adminController.searchProd);
 // route.get("/add-prod/:categId", adminController.getAddProd);
 route.post("/edit-prod/:prodId/:categId", adminController.editProd);
 route.post("/remove-prod/:prodId/:categId", adminController.removeProd);
