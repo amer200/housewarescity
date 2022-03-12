@@ -101,6 +101,14 @@
                     </main>
                 </div>
                 <div class="col d-flex flex-column h-sm-100 img-gallery">
+                    <!-- <form action="/admin/get-edit-search-prod/<%=categ%>" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">بحث عن منتج بالاسم</label>
+                            <input type="text" class="form-control" name="prod" required
+                                style="width: 150px; display: inline;">
+                            <button type="submit" class="btn btn-dark">بحث</button>
+                        </div>
+                    </form> -->
                     <ul class="list-group">
                         <h4>المنتجات</h4>
                         <% prods.forEach(c=>{%>
@@ -163,7 +171,7 @@
                                                                     <label class="form-lable">item-no</label>
                                                                     <input type="text" class="form-control"
                                                                         style="width: 33.3333333%;" name="item_no"
-                                                                        placeholder="item-no" value="<%=c.itmeno%>">
+                                                                        placeholder="item-no" value="<%=c.itemno%>">
                                                                 </div>
                                                                 <div class="mb-3">
                                                                     <label for="form-lable">package dimentions</label>

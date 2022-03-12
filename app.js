@@ -37,11 +37,14 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({ mongoUrl: dbUrl }),
+  errMsg: false,
 };
 app.use(session(sessionConfig));
 app.use((req, res, next) => {
   res.locals.lang = "ar";
   res.locals.user = req.session.user;
+  res.locals.errMsg = req.session.errMsg;
+  req.session.errMsg = false;
   CategAr.find()
     .then((c) => {
       res.locals.categs = c;
@@ -51,6 +54,7 @@ app.use((req, res, next) => {
     });
   next();
 });
+
 app.use(cors());
 // routes
 const adminRoutes = require("./routes/admin");

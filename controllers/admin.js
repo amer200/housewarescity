@@ -16,26 +16,37 @@ exports.addCateg = (req, res, next) => {
   const nameAr = req.body.name_ar;
   const nameEn = req.body.name_en;
   const img = req.files;
-  const newCateg = new CategAr({
-    name: {
-      ar: nameAr,
-      en: nameEn,
-    },
-    img: img[0] ? img[0].path : "",
-    prod: [],
-  });
-  newCateg
-    .save()
-    .then((c) => {
-      res.redirect("/admin");
-    })
-    .catch((err) => {
-      console.log(err);
+  if (!nameAr || !nameEn || !img) {
+    const msg = "all fileds is required !";
+    req.session.errMsg = msg;
+    res.redirect("/admin");
+  } else {
+    const newCateg = new CategAr({
+      name: {
+        ar: nameAr,
+        en: nameEn,
+      },
+      img: img[0] ? img[0].path : "",
+      prod: [],
     });
+    newCateg
+      .save()
+      .then((c) => {
+        res.redirect("/admin");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 };
 exports.editCateg = (req, res, next) => {
   const nameAr = req.body.name_ar;
   const nameEn = req.body.name_en;
+  if (!nameAr || !nameEn) {
+    const msg = "all fileds is required !";
+    req.session.errMsg = msg;
+    return res.redirect("/admin");
+  }
   let img = req.body.img;
   const categId = req.params.categId;
   if (req.files[0]) {
@@ -110,6 +121,11 @@ exports.addProd = (req, res, next) => {
     pcs_20ft: req.body.pcs_20ft,
     pc_40ft: req.body.pc_40ft,
   };
+  if (!price || !quant) {
+    const msg = "السعر و الكمية يجب اضفتهم";
+    req.session.errMsg = msg;
+    return res.redirect(`/admin/prods/${categId}`);
+  }
   if (imgs) {
     imgs.forEach((i) => {
       imgsPath.push(i.path);
@@ -137,7 +153,7 @@ exports.addProd = (req, res, next) => {
       return c.save();
     })
     .then((result) => {
-      res.redirect("/admin");
+      res.redirect(`/admin/prods/${categId}`);
     })
     .catch((err) => {
       console.log(err);
@@ -166,6 +182,11 @@ exports.editProd = (req, res, next) => {
     pc_40ft: req.body.pc_40ft,
   };
   const imgsPath = [];
+  if (!price || !quant) {
+    const msg = "السعر و الكمية يجب اضفتهم";
+    req.session.errMsg = msg;
+    return res.redirect(`/admin/prods/${categId}`);
+  }
   if (imgs) {
     imgs.forEach((i) => {
       imgsPath.push(i.path);
@@ -190,6 +211,30 @@ exports.editProd = (req, res, next) => {
     })
     .then((result) => {
       res.redirect(`/admin/prods/${categId}`);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+exports.searchProd = (req, res, next) => {
+  const categ = req.params.categId;
+  const prod = req.body.prod;
+  CategAr.findById(categ)
+    .then((c) => {
+      c.prods.forEach((p) => {
+        if ((p.name.ar = prod) || (p.name.en = prod)) {
+          let foundprod = p;
+          console.log(prod);
+          return res.render("admin/edit-prod", {
+            p: foundprod,
+            categ: categ,
+          });
+        } else {
+          const msg = "لا يوجد منتج بهذا الاسم";
+          req.session.errMsg = msg;
+          return res.redirect(`/admin/prods/${categ}`);
+        }
+      });
     })
     .catch((err) => {
       console.log(err);
