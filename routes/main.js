@@ -13,6 +13,7 @@ route.get(
   isLogedin,
   mainController.addCard
 );
+route.post("/get-price", isLogedin, mainController.getPrice);
 route.post("/search", mainController.search);
 route.get("/:lang", mainController.changeLang);
 module.exports = route;

@@ -110,7 +110,10 @@ exports.search = (req, res, next) => {
       // console.log(c);
       if (c[0]) {
         const prods = c[0].prods.filter((e) => {
-          return e.name.ar.match(text) || e.name.en.match(text);
+          return (
+            e.name.ar.match({ $regex: new RegExp("^" + text + ".*", "i") }) ||
+            e.name.en.match({ $regex: new RegExp("^" + text + ".*", "i") })
+          );
         });
         res.send({ p: prods, lang: lang });
       }
@@ -143,4 +146,12 @@ exports.changeLang = (req, res, next) => {
   const lang = req.params.lang;
   req.session.lang = lang;
   res.redirect("/");
+};
+exports.getPrice = (req, res, next) => {
+  const prods = req.body.prod;
+  let total = 0;
+  prods.forEach((p) => {
+    total = total + p.price;
+  });
+  res.send({ total: total });
 };

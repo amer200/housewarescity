@@ -391,7 +391,7 @@
             <div class="woocommerce-notices-wrapper">
                 <div class="woocommerce-message">Shipping costs updated.</div>
             </div>
-            <form action="#" class="woocommerce-cart-form">
+            <div class="woocommerce-cart-form">
                 <table class="cart_table">
                     <thead>
                         <tr>
@@ -399,7 +399,7 @@
                             <th class="cart-col-productname">Product Name</th>
                             <!-- <th class="cart-col-price">Price</th> -->
                             <th class="cart-col-quantity">Quantity</th>
-                            <th class="cart-col-total">Total</th>
+                            <!-- <th class="cart-col-total">Total</th> -->
                             <th class="cart-col-remove">Remove</th>
                         </tr>
                     </thead>
@@ -407,25 +407,40 @@
                         <% card.forEach(c=>{%>
                             <tr class="cart_item">
                                 <td data-title="Product">
-                                    <a class="cart-productimage" href="shop.html"><img width="91" height="91"
-                                            src="/assets/img/cart/cat-img-1.jpg" alt="Image"></a>
+                                    <a class="cart-productimage" href=""><img width="91" height="91"
+                                            src="/<%=c.imgs[0]%>" alt="Image"></a>
                                 </td>
                                 <td data-title="Name">
-                                    <a class="cart-productname" href="shop.html">Apple Watch</a>
+                                    <a class="cart-productname" href="">
+                                        <%=c.name[lang]%>
+                                    </a>
                                 </td>
                                 <!-- <td data-title="Price">
                                 <span class="amount"><bdi><span>$</span>18</bdi></span>
                             </td> -->
                                 <td data-title="Quantity">
                                     <div class="quantity">
-                                        <button class="quantity-minus qut-btn"><i class="far fa-minus"></i></button>
-                                        <input type="number" class="qty-input" value="1" min="1" max="99">
-                                        <button class="quantity-plus qut-btn"><i class="far fa-plus"></i></button>
+                                        <button class="quantity-minus qut-btn" onclick="minQuant()"><i
+                                                class="far fa-minus"></i></button>
+                                        <input type="number" class="qty-input" id="quant" value="1" min="1" max="99">
+                                        <button class="quantity-plus qut-btn" onclick="plusQuant()"><i
+                                                class="far fa-plus"></i></button>
                                     </div>
+                                    <script>
+                                        let e = document.getElementById('quant');
+                                        const plusQuant = () => {
+                                            e.value++
+                                        }
+                                        const minQuant = () => {
+                                            if (e.value > 0) {
+                                                e.value--
+                                            }
+                                        }
+                                    </script>
                                 </td>
-                                <td data-title="Total">
+                                <!-- <td data-title="Total">
                                     <span class="amount"><bdi><span>$</span>18</bdi></span>
-                                </td>
+                                </td> -->
                                 <td data-title="Remove">
                                     <a href="#" class="remove"><i class="fal fa-trash-alt"></i></a>
                                 </td>
@@ -446,7 +461,7 @@
                                 </tr>
                     </tbody>
                 </table>
-            </form>
+            </div>
             <div class="row justify-content-end">
                 <div class="col-md-8 col-lg-7 col-xl-6">
                     <h2 class="h4 summary-title">Cart Totals</h2>

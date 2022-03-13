@@ -335,25 +335,27 @@
         const searchResult = document.getElementById('serch-result');
         console.log(searchResult)
         const sendData = (e) => {
-            fetch('/search', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ text: e.value })
-            })
-                .then(res => {
-                    return res.json()
+            if (e.value !== '' & e.value !== ' ') {
+                fetch('/search', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: e.value })
                 })
-                .then(data => {
-                    if (data.p.length > 0) {
-                        const lang = data.lang;
-                        data.p.forEach(e => {
-                            searchResult.innerHTML = `<a href='' class="list-group-item list-group-item-action">${e.name[lang]}</a>`
-                        });
-                        console.log('p =' + data.p)
-                    }
-                })
-                .catch(err => {
-                    console.log(err)
-                })
+                    .then(res => {
+                        return res.json()
+                    })
+                    .then(data => {
+                        if (data.p.length > 0) {
+                            const lang = data.lang;
+                            data.p.forEach(e => {
+                                searchResult.innerHTML = `<a href='' class="list-group-item list-group-item-action">${e.name[lang]}</a>`
+                            });
+                            console.log('p =' + data.p)
+                        }
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+            }
         }
     </script>
