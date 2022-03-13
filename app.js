@@ -25,7 +25,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
-
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(upload.array("imgsUP"));
 app.use(locale(supported, defaultLang));
@@ -38,10 +38,11 @@ const sessionConfig = {
   saveUninitialized: false,
   store: MongoStore.create({ mongoUrl: dbUrl }),
   errMsg: false,
+  lang: "ar",
 };
 app.use(session(sessionConfig));
 app.use((req, res, next) => {
-  res.locals.lang = "ar";
+  res.locals.lang = req.session.lang;
   res.locals.user = req.session.user;
   res.locals.errMsg = req.session.errMsg;
   req.session.errMsg = false;
