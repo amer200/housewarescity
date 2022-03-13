@@ -140,3 +140,11 @@ exports.getSignIn = (req, res, next) => {
     message: false,
   });
 };
+exports.logOut = (req, res, next) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.log(err);
+    }
+    res.redirect("/");
+  });
+};

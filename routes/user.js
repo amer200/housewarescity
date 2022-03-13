@@ -7,4 +7,5 @@ route.get("/signup", userController.getSignUp);
 route.get("/confirm/email/:code", userController.emailConfirm);
 route.post("/signin", userController.signIn);
 route.get("/signin", userController.getSignIn);
+route.get("/log-out", userController.logOut);
 module.exports = route;

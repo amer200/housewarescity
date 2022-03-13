@@ -92,14 +92,27 @@ exports.getCard = (req, res, next) => {
     });
 };
 exports.search = (req, res, next) => {
-  const sText = req.query.text;
-  CategAr.find({ $text: { $search: sText } })
-    .limit(10)
-    .then((prod) => {
-      if (prod) {
-        res.send(prod);
-      } else {
-        res.send("no prod");
+  const text = req.body.text.trim();
+  console.log(text);
+  const lang = req.session.lang;
+  let filter;
+  if (lang == "en") {
+    filter = {
+      "prods.name.en": { $regex: new RegExp("^" + text + ".*", "i") },
+    };
+  } else {
+    filter = {
+      "prods.name.ar": { $regex: new RegExp("^" + text + ".*", "i") },
+    };
+  }
+  CategAr.find(filter)
+    .then((c) => {
+      // console.log(c);
+      if (c[0]) {
+        const prods = c[0].prods.filter((e) => {
+          return e.name.ar.match(text) || e.name.en.match(text);
+        });
+        res.send({ p: prods, lang: lang });
       }
     })
     .catch((err) => {
@@ -110,18 +123,24 @@ exports.addCard = (req, res, next) => {
   const prodId = req.params.prodId;
   const categId = req.params.categId;
   const userId = req.params.userId;
-  CategAr.findById(categId).then((c) => {
-    p = c.prods.id(prodId);
-    User.findById(userId)
-      .then((u) => {
-        u.card.push(p);
-        return u.save();
-      })
-      .then((result) => {
-        res.redirect(`/card/${userId}`);
-      });
-  })
-  .catch(err =>{
-    console.log(err)
-  })
+  CategAr.findById(categId)
+    .then((c) => {
+      p = c.prods.id(prodId);
+      User.findById(userId)
+        .then((u) => {
+          u.card.push(p);
+          return u.save();
+        })
+        .then((result) => {
+          res.redirect(`/card/${userId}`);
+        });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+exports.changeLang = (req, res, next) => {
+  const lang = req.params.lang;
+  req.session.lang = lang;
+  res.redirect("/");
 };
