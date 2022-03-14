@@ -106,7 +106,7 @@ exports.getCard = (req, res, next) => {
 exports.search = (req, res, next) => {
   const text = req.body.text.trim();
   console.log(text);
-  const lang = req.session.lang;
+  const lang = req.session.cookie.lang;;
   let filter;
   if (lang == "en") {
     filter = {
@@ -154,11 +154,11 @@ exports.addCard = (req, res, next) => {
       console.log(err);
     });
 };
-exports.changeLang = (req, res, next) => {
-  const lang = req.params.lang;
-  req.session.lang = lang;
-  res.redirect("/");
-};
+// exports.changeLang = (req, res, next) => {
+//   const lang = req.params.lang;
+//   req.session.cookie.lang = lang;
+//   res.redirect("/");
+// };
 exports.getPrice = (req, res, next) => {
   const prods = req.body.prod;
   let total = 0;

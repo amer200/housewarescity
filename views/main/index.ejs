@@ -5,45 +5,181 @@
     <section class="vs-hero-wrapper position-relative  ">
         <div class="vs-hero-carousel" data-height="900" data-container="1900"
             style="background-color: #edece7; clip-path: polygon(0px 0px, 100% 0px, 100% 84%, 0% 100%);">
-            <% let i=1%>
-                <%categs.forEach(c=>{%>
-                    <div class="ls-slide"
-                        data-ls="bgcolor:#edece7; duration:10000; transition2d:5; timeshift:5000; kenburnsscale:1.2;">
-                        <img width="1920" height="900" src="/<%=c.img%>" class="ls-bg" alt="hero image" />
-                        <p style="top:586px; left:400px; font-weight:700; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
-                            class="ls-l ls-hide-tablet ls-hide-phone"
-                            data-ls="durationin:1200; easingin:easeOutQuint; rotatexin:90; transformoriginin:50% 0% 0; durationout:1300; easingout:easeOutQuint; rotatexout:90; transformoriginout:50% 100% 0;">
-                            0<%=i%>
-                        </p>
-                        <p style="top:585px; left:430px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
-                            class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">/</p>
-                        <p style="top:586px; left:450px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
-                            class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">
-                            <%= categs.length%>
-                        </p>
-                        <a class="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self"
-                            data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
-                            <div style="top:586px; left:500px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
-                                class=""><i class="fas fa-caret-right"></i></div>
-                        </a>
-                        <a class="ls-l ls-hide-tablet ls-hide-phone" href="#prev" target="_self"
-                            data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
-                            <div style="top:586px; left:361px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
-                                class=""><i class="fas fa-caret-left"></i></div>
-                        </a>
-                        <p style="top:205px; left:360px; font-weight:600; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c; letter-spacing:3px;"
-                            class="ls-l ls-hide-tablet ls-hide-phone"
-                            data-ls="offsetxin:-100; durationin:1200; delayin:800; easingin:easeOutQuint; transformoriginin:0% 50% 0; offsetxout:-100; minfontsize:16;">
-                            <%=c.name[lang]%>
-                        </p>
-                        <h1 style="top:212px; left:150px; font-weight:500; background-size:inherit; background-position:inherit; font-size:170px; font-family:Jost; color:#2c2c2c;"
-                            class="ls-l ls-hide-desktop ls-hide-tablet"
-                            data-ls="offsetxin:-100; durationin:1300; delayin:1000; easingin:easeOutQuint; offsetxout:-100;">
-                            <%=c.name[lang]%>
-                        </h1>
-                    </div>
-                    <%i++%>
-                        <%})%>
+            <div class="ls-slide"
+                data-ls="bgcolor:#edece7; duration:10000; transition2d:5; timeshift:5000; kenburnsscale:1.2;">
+                <img width="1920" height="900" src="/assets/img2/slide-1.jpeg" class="ls-bg" alt="hero image" />
+                <p style="top:586px; left:400px; font-weight:700; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone"
+                    data-ls="durationin:1200; easingin:easeOutQuint; rotatexin:90; transformoriginin:50% 0% 0; durationout:1300; easingout:easeOutQuint; rotatexout:90; transformoriginout:50% 100% 0;">
+                    01
+                </p>
+                <p style="top:585px; left:430px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">/</p>
+                <p style="top:586px; left:450px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">
+                    07
+                </p>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:500px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-right"></i></div>
+                </a>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#prev" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:361px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-left"></i></div>
+                </a>
+            </div>
+            <div class="ls-slide"
+                data-ls="bgcolor:#edece7; duration:10000; transition2d:5; timeshift:5000; kenburnsscale:1.2;">
+                <img width="1920" height="900" src="/assets/img2/slide-2.jpeg" class="ls-bg" alt="hero image" />
+                <p style="top:586px; left:400px; font-weight:700; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone"
+                    data-ls="durationin:1200; easingin:easeOutQuint; rotatexin:90; transformoriginin:50% 0% 0; durationout:1300; easingout:easeOutQuint; rotatexout:90; transformoriginout:50% 100% 0;">
+                    02
+                </p>
+                <p style="top:585px; left:430px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">/</p>
+                <p style="top:586px; left:450px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">
+                    07
+                </p>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:500px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-right"></i></div>
+                </a>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#prev" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:361px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-left"></i></div>
+                </a>
+            </div>
+            <div class="ls-slide"
+                data-ls="bgcolor:#edece7; duration:10000; transition2d:5; timeshift:5000; kenburnsscale:1.2;">
+                <img width="1920" height="900" src="/assets/img2/slide-3.jpeg" class="ls-bg" alt="hero image" />
+                <p style="top:586px; left:400px; font-weight:700; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone"
+                    data-ls="durationin:1200; easingin:easeOutQuint; rotatexin:90; transformoriginin:50% 0% 0; durationout:1300; easingout:easeOutQuint; rotatexout:90; transformoriginout:50% 100% 0;">
+                    03
+                </p>
+                <p style="top:585px; left:430px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">/</p>
+                <p style="top:586px; left:450px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">
+                    07
+                </p>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:500px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-right"></i></div>
+                </a>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#prev" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:361px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-left"></i></div>
+                </a>
+            </div>
+            <div class="ls-slide"
+                data-ls="bgcolor:#edece7; duration:10000; transition2d:5; timeshift:5000; kenburnsscale:1.2;">
+                <img width="1920" height="900" src="/assets/img2/slide-4.jpeg" class="ls-bg" alt="hero image" />
+                <p style="top:586px; left:400px; font-weight:700; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone"
+                    data-ls="durationin:1200; easingin:easeOutQuint; rotatexin:90; transformoriginin:50% 0% 0; durationout:1300; easingout:easeOutQuint; rotatexout:90; transformoriginout:50% 100% 0;">
+                    04
+                </p>
+                <p style="top:585px; left:430px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">/</p>
+                <p style="top:586px; left:450px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">
+                    07
+                </p>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:500px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-right"></i></div>
+                </a>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#prev" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:361px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-left"></i></div>
+                </a>
+            </div>
+            <div class="ls-slide"
+                data-ls="bgcolor:#edece7; duration:10000; transition2d:5; timeshift:5000; kenburnsscale:1.2;">
+                <img width="1920" height="900" src="/assets/img2/slide-5.jpeg" class="ls-bg" alt="hero image" />
+                <p style="top:586px; left:400px; font-weight:700; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone"
+                    data-ls="durationin:1200; easingin:easeOutQuint; rotatexin:90; transformoriginin:50% 0% 0; durationout:1300; easingout:easeOutQuint; rotatexout:90; transformoriginout:50% 100% 0;">
+                    05
+                </p>
+                <p style="top:585px; left:430px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">/</p>
+                <p style="top:586px; left:450px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">
+                    07
+                </p>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:500px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-right"></i></div>
+                </a>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#prev" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:361px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-left"></i></div>
+                </a>
+            </div>
+            <div class="ls-slide"
+                data-ls="bgcolor:#edece7; duration:10000; transition2d:5; timeshift:5000; kenburnsscale:1.2;">
+                <img width="1920" height="900" src="/assets/img2/slide-6.jpeg" class="ls-bg" alt="hero image" />
+                <p style="top:586px; left:400px; font-weight:700; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone"
+                    data-ls="durationin:1200; easingin:easeOutQuint; rotatexin:90; transformoriginin:50% 0% 0; durationout:1300; easingout:easeOutQuint; rotatexout:90; transformoriginout:50% 100% 0;">
+                    06
+                </p>
+                <p style="top:585px; left:430px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">/</p>
+                <p style="top:586px; left:450px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">
+                    07
+                </p>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:500px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-right"></i></div>
+                </a>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#prev" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:361px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-left"></i></div>
+                </a>
+            </div>
+            <div class="ls-slide"
+                data-ls="bgcolor:#edece7; duration:10000; transition2d:5; timeshift:5000; kenburnsscale:1.2;">
+                <img width="1920" height="900" src="/assets/img2/slide-7.jpeg" class="ls-bg" alt="hero image" />
+                <p style="top:586px; left:400px; font-weight:700; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone"
+                    data-ls="durationin:1200; easingin:easeOutQuint; rotatexin:90; transformoriginin:50% 0% 0; durationout:1300; easingout:easeOutQuint; rotatexout:90; transformoriginout:50% 100% 0;">
+                    07
+                </p>
+                <p style="top:585px; left:430px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">/</p>
+                <p style="top:586px; left:450px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">
+                    07
+                </p>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:500px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-right"></i></div>
+                </a>
+                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#prev" target="_self"
+                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                    <div style="top:586px; left:361px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                        class=""><i class="fas fa-caret-left"></i></div>
+                </a>
+            </div>
         </div>
     </section>
     <!--==============================

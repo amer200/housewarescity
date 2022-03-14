@@ -399,7 +399,7 @@
                             <th class="cart-col-productname">Product Name</th>
                             <!-- <th class="cart-col-price">Price</th> -->
                             <th class="cart-col-quantity">Quantity</th>
-                            <!-- <th class="cart-col-total">Total</th> -->
+                            <th class="cart-col-total">Total</th>
                             <th class="cart-col-remove">Remove</th>
                         </tr>
                     </thead>
@@ -415,32 +415,22 @@
                                         <%=c.name[lang]%>
                                     </a>
                                 </td>
-                                <!-- <td data-title="Price">
-                                <span class="amount"><bdi><span>$</span>18</bdi></span>
-                            </td> -->
                                 <td data-title="Quantity">
                                     <div class="quantity">
-                                        <button class="quantity-minus qut-btn" onclick="minQuant()"><i
+                                        <button class="quantity-minus qut-btn" onclick="minQuant(this)"><i
                                                 class="far fa-minus"></i></button>
-                                        <input type="number" class="qty-input" id="quant" value="1" min="1" max="99">
-                                        <button class="quantity-plus qut-btn" onclick="plusQuant()"><i
+                                        <input type="number" class="qty-input" id="quant" value="1" min="1" max="99"
+                                            onchange="totalProd()">
+                                        <button class="quantity-plus qut-btn" onclick="plusQuant(this)"><i
                                                 class="far fa-plus"></i></button>
                                     </div>
-                                    <script>
-                                        let e = document.getElementById('quant');
-                                        const plusQuant = () => {
-                                            e.value++
-                                        }
-                                        const minQuant = () => {
-                                            if (e.value > 0) {
-                                                e.value--
-                                            }
-                                        }
-                                    </script>
                                 </td>
-                                <!-- <td data-title="Total">
-                                    <span class="amount"><bdi><span>$</span>18</bdi></span>
-                                </td> -->
+                                <td data-title="Total">
+                                    <span class="amount"><bdi class="total-prods">$
+                                            <%=c.price%>
+                                        </bdi></span>
+                                </td>
+
                                 <td data-title="Remove">
                                     <a href="#" class="remove"><i class="fal fa-trash-alt"></i></a>
                                 </td>
@@ -652,6 +642,28 @@
     <script src="/assets/js/ajax-mail.js"></script>
     <!-- Main Js File -->
     <script src="/assets/js/main.js"></script>
+    <script>
+        const plusQuant = (t) => {
+            let e = t.previousElementSibling;
+            e.value++
+        }
+        const minQuant = (t) => {
+            let e = t.nextElementSibling
+            if (e.value > 0) {
+                e.value--
+            }
+        }
+        const totalProd = () => {
+            const prodsPriceInput = Array.prototype.slice.call(document.getElementsByClassName('qty-input'));
+            const prodsTotal = Array.prototype.slice.call(document.getElementsByClassName('total-prods'));
+            for (let i = 0; i <= prodsPriceInput; i++) {
+                prodsTotal[i].innerHtml = '$' + prodsPriceInput[i] * prodsTotal[i].innerHtml.split('$')[1]
+                console.log(prodsTotal[i].innerHtml.split('$')[1])
+            }
+
+        }
+        totalProd()
+    </script>
 
 </body>
 

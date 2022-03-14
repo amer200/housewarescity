@@ -2,10 +2,10 @@
     <!--==============================
     Breadcumb
 ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="/assets/img/breadcumb/bredcumb-1.png">
+    <div class="breadcumb-wrapper " data-bg-src="/assets/img2/about-us.jpeg">
         <div class="container z-index-common">
             <div class="breadcumb-content">
-                <h1 class="breadcumb-title">About Us</h1>
+                <!-- <h1 class="breadcumb-title">About Us</h1> -->
             </div>
             <div class="breadcumb-menu-wrap">
                 <ul class="breadcumb-menu">
@@ -29,13 +29,35 @@
                 </div>
                 <div class="col-lg-6 col-xl-5 mb-30">
                     <div class="about-style1">
-                        <h2 class="about-title">Welcome to Al Awani Houseware City Industry</h2>
-                        <p class="about-text">Al Awani Houseware City Industry , was established in 2020 in Jeddah,
-                            affiliated with the Al-Jahoury Group for Industry and Trade. We specialize in the
-                            manufacture and production of utensils and household appliances.
-                            We work on using the latest production technology and the best raw materials. Al-Awan City
-                            Co. proves itself well as one of the best Saudi factories specialized in this field. Through
-                            our experience, we have a distinguished position in the Saudi market.
+                        <h2 class="about-title">
+                            <% if(lang=='en' ){%>
+                                Welcome to Al Awani Houseware City Industry
+                                <%}else{%>
+                                    مرحبا بكم في مصنع الأواني المنزلية
+                                    <%}%>
+                        </h2>
+                        <p class="about-text">
+                            <% if(lang=='en' ){%>
+                                Al Awani Houseware City Industry , was established in 2020 in Jeddah,
+                                affiliated with the Al-Jahoury Group for Industry and Trade. We specialize in
+                                the
+                                manufacture and production of utensils and household appliances.
+                                We work on using the latest production technology and the best raw materials.
+                                Al-Awan City
+                                Co. proves itself well as one of the best Saudi factories specialized in this
+                                field. Through
+                                our experience, we have a distinguished position in the Saudi market.
+                                <%}else{%>
+                                    تأسس مصنع مدينة الأواني عام 2020 في جدة، تابع لمجموعة الجهوري للصناعة والتجارة،
+                                    نتخصص في مجال صناعة وانتاج الأواني والأدوات المنزلية، ونعمل على استخدام أحدث
+                                    تكنولوجيا الإنتاج وأفضل الخامات.
+                                    استطاع مصنع مدينة الأواني أن يثبت نفسه بجدارة كأحد أكبر المصانع السعودية المتخصصة في
+                                    هذا المجال، فمن خلال خبراتنا استطعنا الحصول على مركز متميز في السوق السعودي حيث أننا
+                                    نوفر منتجاتنا في جميع مناطق المملكة كما يتم تصديرها إلى دول خارج المملكة.
+                                    يقدم المصنع العديد من المنتجات البلاستيكية عالية الجودة من حيث المتانة والالتزام
+                                    بالمواصفات العالمية للصناعة، لتناسب احتياجات ومتطلبات المستهلك.
+                                    <%}%>
+
                         </p>
                     </div>
                 </div>
@@ -86,10 +108,24 @@
                         <div class="feature_card_icon">
                             <img src="/assets/img/icon/feature-1-1.png" alt="feature icon">
                         </div>
-                        <h3 class="feature_card_title">Mission</h3>
-                        <p class="feature_card_text">Improve household utensils products by examining raw materials and
-                            meticulous follow-up of production stages to provide high quality products.
-                            We are proud to present these products to the Saudi community to be part of its economy.
+                        <h3 class="feature_card_title">
+                            <% if(lang=='en' ){%>
+                                Mission
+                                <%}else{%>
+                                    مهمتنا
+                                    <%}%>
+                        </h3>
+                        <p class="feature_card_text">
+                            <% if(lang=='en' ){%>
+                                Improve household utensils products by examining raw materials and
+                                meticulous follow-up of production stages to provide high quality products.
+                                We are proud to present these products to the Saudi community to be part of its
+                                economy.
+                                <%}else{%>
+                                    الارتقاء بمستوى منتجات الأواني المنزلية من خلال الفحص الدقيق للخامات، ومتابعة مراحل
+                                    الإنتاج بدقة لتقديم منتجات عالية الجودة، ونفخر بتقديم هذه المنتجات للمجتمع السعودي
+                                    لنكون جزءًا من عجلة اقتصاده.
+                                    <%}%>
                         </p>
                     </div>
                 </div>
@@ -98,10 +134,25 @@
                         <div class="feature_card_icon">
                             <img src="/assets/img/icon/feature-1-2.png" alt="feature icon">
                         </div>
-                        <h3 class="feature_card_title">Vision</h3>
-                        <p class="feature_card_text">Maintaining the company's distinguished level in the local market,
-                            we believe development and modern technology are significant to success and distinction.
-                            We invest in this field to achieve leadership in manufacturing household utensils.
+                        <h3 class="feature_card_title">
+                            <% if(lang=='en' ){%>
+                                Vision
+                                <%}else{%>
+                                    روئيتنا
+                                    <%}%>
+                        </h3>
+                        <p class="feature_card_text">
+                            <% if(lang=='en' ){%>
+                                Maintaining the company's distinguished level in the local market,
+                                we believe development and modern technology are significant to success and
+                                distinction.
+                                We invest in this field to achieve leadership in manufacturing household
+                                utensils.
+                                <%}else{%>
+                                    الحفاظ على مستوى الشركة المتميز في السوق المحلي، كما أننا نؤمن بأن التطور
+                                    والتكنولوجيا الحديثة هما أهم عنصري النجاح والتميز فنحن نستثمر دومًا في هذا النطاق،
+                                    لتحقيق الريادة في مجال تصنيع الأواني المنزلية.
+                                    <%}%>
                         </p>
                     </div>
                 </div>
@@ -110,10 +161,26 @@
                         <div class="feature_card_icon">
                             <img src="/assets/img/icon/feature-1-3.png" alt="feature icon">
                         </div>
-                        <h3 class="feature_card_title">Our message</h3>
-                        <p class="feature_card_text">To provide our customers with high-quality products that meet their
-                            needs at competitive prices and manage our brand by investing in our human resources and
-                            using the best technology in the industry to maintain our image as a reliable factory.</p>
+                        <h3 class="feature_card_title">
+                            <% if(lang=='en' ){%>
+                                Our message
+                                <%}else{%>
+                                    رسالتنا
+                                    <%}%>
+                        </h3>
+                        <p class="feature_card_text">
+                            <% if(lang=='en' ){%>
+                                To provide our customers with high-quality products that meet their
+                                needs at competitive prices and manage our brand by investing in our human
+                                resources and
+                                using the best technology in the industry to maintain our image as a reliable
+                                factory.
+                                <%}else{%>
+                                    أن نوفر لعملائنا منتجات ذات جودة عالية تتواكب مع احتياجاتهم مقابل أسعار منافسة، مع
+                                    التركيز على إدارة علامتنا التجارية من خلال الاستثمار في مواردنا البشرية، واستخدام
+                                    أفضل تكنولوجيا في الصناعة للمحافظة على صورتنا كمصنع موثوق به.
+                                    <%}%>
+                        </p>
                     </div>
                 </div>
             </div>

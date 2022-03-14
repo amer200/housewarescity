@@ -23,22 +23,31 @@ const storage = multer.diskStorage({
     cb(null, file.fieldname + "-" + uniqueSuffix);
   },
 });
+
 const sessionConfig = {
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({ mongoUrl: dbUrl }),
   errMsg: false,
-  lang: "ar",
+  cookie: { lang: "ar" },
 };
+app.use((req, res, next) => {
+  const lang = req.query.lang;
+  console.log(lang);
+  if (lang) {
+    sessionConfig.cookie.lang = lang;
+    res.locals.lang = sessionConfig.cookie.lang;
+    res.redirect("/");
+  } else {
+    res.locals.lang = sessionConfig.cookie.lang;
+    next();
+  }
+});
 app.use(session(sessionConfig));
 app.use((req, res, next) => {
   CategAr.find()
     .then((c) => {
-      res.locals.lang = req.session.lang;
-      if (!res.locals.lang) {
-        res.locals.lang = "ar";
-      }
       res.locals.user = req.session.user;
       res.locals.errMsg = req.session.errMsg;
       req.session.errMsg = false;
