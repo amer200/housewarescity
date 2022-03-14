@@ -33,10 +33,25 @@ exports.getAbout = (req, res, next) => {
 };
 exports.getProds = (req, res, next) => {
   const categ = req.params.categ;
+  let start = req.query.start;
+  let end = req.query.end;
+  if (!start) {
+    start = 0;
+    end = 0;
+  }
   CategAr.findById(categ)
     .then((c) => {
+      let prods = [];
+      const pagNum = c.prods.length / 10;
+      for (let i = start; i <= end; i++) {
+        if (c.prods[i]) {
+          prods.push(c.prods[i]);
+        }
+      }
       res.render("main/product", {
         categ: c,
+        p: prods,
+        pagNum: Math.floor(pagNum),
       });
     })
     .catch((err) => {

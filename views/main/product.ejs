@@ -681,11 +681,13 @@
             </div>
             <div class="vs-pagination pt-20 pb-30">
                 <ul>
-                    <li><a href="#"><i class="far fa-chevron-left"></i></a></li>
-                    <li><a href="#" class="active">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#"><i class="far fa-chevron-right"></i></a></li>
+                    <!-- <li><a href="#"><i class="far fa-chevron-left"></i></a></li> -->
+                    <% for(let i=0; i<=pagNum; i++ ){%>
+                        <li><a href="/prods/<%=categ._id%>/?start=0&end=10">
+                                <%= i+1%>
+                            </a></li>
+                        <%}%>
+                            <!-- <li><a href="#"><i class="far fa-chevron-right"></i></a></li> -->
                 </ul>
             </div>
         </div>

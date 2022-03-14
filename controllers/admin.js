@@ -93,6 +93,7 @@ exports.getCategProd = (req, res, next) => {
       res.render("admin/product-by-categ", {
         prods: c.prods,
         categ: categ,
+        categName: c.name.ar,
       });
     })
     .catch((err) => {
@@ -222,7 +223,7 @@ exports.searchProd = (req, res, next) => {
   CategAr.findById(categ)
     .then((c) => {
       c.prods.forEach((p) => {
-        if ((p.itemno == prod)) {
+        if (p.itemno == prod) {
           let foundprod = p;
           return res.render("admin/edit-prod", {
             p: foundprod,
