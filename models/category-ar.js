@@ -28,6 +28,7 @@ const categorySchema = mongoose.Schema({
     en: String,
   },
   img: String,
+  backg: String,
   prods: [prodScema],
 });
 prodScema.index({ name: "text", name: "text" });

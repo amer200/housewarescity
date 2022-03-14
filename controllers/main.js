@@ -2,20 +2,17 @@ const CategAr = require("../models/category-ar");
 const Team = require("../models/team");
 const User = require("../models/user");
 exports.getIndex = (req, res, next) => {
-  CategAr.find().then((c) => {
-    let offers = [];
-    c.forEach((c) => {
-      c.prods.forEach((p) => {
-        if (p.offer) {
-          offers.push(p);
-        }
+  CategAr.find()
+    .then((c) => {
+      let offers = [];
+      res.render("main/index", {
+        categs: c,
+        offers: offers,
       });
+    })
+    .catch((err) => {
+      console.log(err);
     });
-    res.render("main/index", {
-      categs: c,
-      offers: offers,
-    });
-  });
 };
 exports.getAbout = (req, res, next) => {
   CategAr.find()

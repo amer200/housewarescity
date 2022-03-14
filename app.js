@@ -23,15 +23,6 @@ const storage = multer.diskStorage({
     cb(null, file.fieldname + "-" + uniqueSuffix);
   },
 });
-
-const upload = multer({ storage: storage });
-app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(upload.array("imgsUP"));
-app.use(locale(supported, defaultLang));
-app.use("/admin-uploads", express.static("admin-uploads"));
-app.use("/", express.static("public"));
-app.set("view engine", "ejs");
 const sessionConfig = {
   secret: process.env.SESSION_SECRET,
   resave: false,
@@ -42,26 +33,38 @@ const sessionConfig = {
 };
 app.use(session(sessionConfig));
 app.use((req, res, next) => {
-  res.locals.lang = req.session.lang;
-  res.locals.user = req.session.user;
-  res.locals.errMsg = req.session.errMsg;
-  req.session.errMsg = false;
   CategAr.find()
     .then((c) => {
+      res.locals.lang = req.session.lang;
+      if (!res.locals.lang) {
+        res.locals.lang = "ar";
+      }
+      res.locals.user = req.session.user;
+      res.locals.errMsg = req.session.errMsg;
+      req.session.errMsg = false;
       res.locals.categs = c;
+    })
+    .then((resu) => {
+      next();
     })
     .catch((err) => {
       console.log(err);
     });
-  next();
 });
+const upload = multer({ storage: storage });
+app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(upload.array("imgsUP"));
+app.use(locale(supported, defaultLang));
+app.use("/admin-uploads", express.static("admin-uploads"));
+app.use("/", express.static("public"));
+app.set("view engine", "ejs");
 
 app.use(cors());
 // routes
 const adminRoutes = require("./routes/admin");
 const mainRoutes = require("./routes/main");
 const userRoutes = require("./routes/user");
-const res = require("express/lib/response");
 const isAdmin = require("./controllers/isAdmin").isAdmin;
 app.use("/admin", isAdmin, adminRoutes);
 app.use("/user", userRoutes);

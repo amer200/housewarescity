@@ -5,210 +5,45 @@
     <section class="vs-hero-wrapper position-relative  ">
         <div class="vs-hero-carousel" data-height="900" data-container="1900"
             style="background-color: #edece7; clip-path: polygon(0px 0px, 100% 0px, 100% 84%, 0% 100%);">
-            <!--
-                Slide 1-->
-            <%if(categs[0].prods[0]){%>
-                <div class="ls-slide"
-                    data-ls="bgcolor:#edece7; duration:10000; transition2d:5; timeshift:5000; kenburnsscale:1.2;">
-
-                    <img width="245" height="477" src="<%=categs[0].prods[0].imgs[0]%>" class="ls-l" alt="image"
-                        style="top:520px; left:-25px; background-size:inherit; background-position:inherit;"
-                        data-ls="offsetxin:left; durationin:1400; delayin:1400; easingin:easeOutQuint; offsetxout:left; easingout:easeOutQuint; parallax:true; parallaxlevel:9; parallaxaxis:both;">
-                    <img width="1003" height="595" src="<%=categs[0].prods[0].imgs[1]%>" class="ls-l" alt="image"
-                        style="top:140px; left:478px; background-size:inherit; background-position:inherit;"
-                        data-ls="durationin:1500; delayin:1300; easingin:easeOutQuint; durationout:1400; parallax:true; parallaxlevel:8; parallaxaxis:both; parallaxdistance:30;">
-                    <p style="top:-110px; left:999px; background-size:inherit; background-position:inherit; font-size:24px; border-top:90px solid #5ee16f; border-right:90px solid #e1aa5e; border-bottom:90px solid #e1aa5e; border-left:90px solid #e1aa5e; width:470px; height:470px; border-radius:100%;"
-                        class="ls-l"
-                        data-ls="offsetyin:top; durationin:1400; delayin:500; easingin:easeOutQuint; offsetyout:top; durationout:1100; fadeout:false; parallax:true; parallaxlevel:5; parallaxaxis:both; parallaxdistance:20;">
-                    </p>
-                    <img width="591" height="707" src="<%=categs[0].prods[0].imgs[2]%>" class="ls-l" alt="image"
-                        style="top:30px; left:1032px; background-size:inherit; background-position:inherit;"
-                        data-ls="durationin:1400; easingin:easeOutQuint; parallax:true; parallaxlevel:3; parallaxaxis:both; parallaxdistance:15;">
-
-                    <p style="top:586px; left:400px; font-weight:700; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
-                        class="ls-l ls-hide-tablet ls-hide-phone"
-                        data-ls="durationin:1200; easingin:easeOutQuint; rotatexin:90; transformoriginin:50% 0% 0; durationout:1300; easingout:easeOutQuint; rotatexout:90; transformoriginout:50% 100% 0;">
-                        01</p>
-                    <p style="top:585px; left:430px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
-                        class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">/</p>
-                    <p style="top:586px; left:450px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
-                        class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">03</p>
-                    <a class="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self"
-                        data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
-                        <div style="top:586px; left:500px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
-                            class=""><i class="fas fa-caret-right"></i></div>
-                    </a>
-                    <a class="ls-l ls-hide-tablet ls-hide-phone" href="#prev" target="_self"
-                        data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
-                        <div style="top:586px; left:361px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
-                            class=""><i class="fas fa-caret-left"></i></div>
-                    </a>
-                    <p style="top:205px; left:360px; font-weight:600; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c; letter-spacing:3px;"
-                        class="ls-l ls-hide-tablet ls-hide-phone"
-                        data-ls="offsetxin:-100; durationin:1200; delayin:800; easingin:easeOutQuint; transformoriginin:0% 50% 0; offsetxout:-100; minfontsize:16;">
-                        <%=categs[0].prods[0].name[lang] %>
-                    </p>
-                    <h1 style="top:342px; left:360px; font-weight:500; background-size:inherit; background-position:inherit; font-size:100px; font-family:Jost; color:#2c2c2c;"
-                        class="ls-l ls-hide-phone"
-                        data-ls="offsetxin:-100; durationin:1300; delayin:1200; easingin:easeOutQuint; offsetxout:-100;">
-                        <%=categs[0].name[lang] %>
-                    </h1>
-                    <!-- <p style="top:190px; left:360px; font-weight:600; background-size:inherit; background-position:inherit; font-family:Jost; color:#2c2c2c; font-size:26px; letter-spacing:3px;"
-                        class="ls-l ls-hide-desktop ls-hide-phone"
-                        data-ls="offsetxin:-100; durationin:1200; delayin:800; easingin:easeOutQuint; transformoriginin:0% 50% 0; offsetxout:-100;">
-                        New Arrivals 2022</p>
-                    <h1 style="top:212px; left:150px; font-weight:500; background-size:inherit; background-position:inherit; font-size:170px; font-family:Jost; color:#2c2c2c;"
-                        class="ls-l ls-hide-desktop ls-hide-tablet"
-                        data-ls="offsetxin:-100; durationin:1300; delayin:1000; easingin:easeOutQuint; offsetxout:-100;">
-                        Trendy
-                    </h1>
-                    <h1 style="top:402px; left:150px; font-weight:500; background-size:inherit; background-position:inherit; font-size:170px; font-family:Jost; color:#2c2c2c;"
-                        class="ls-l ls-hide-desktop ls-hide-tablet"
-                        data-ls="offsetxin:-100; durationin:1300; delayin:1200; easingin:easeOutQuint; offsetxout:-100;">
-                        Collection
-                    </h1> -->
-                </div>
-                <%}%>
-                    <% if(categs[1]){%>
-                        <%if(categs[1].prods[0]){%>
-                            <div class="ls-slide"
-                                data-ls="bgcolor:#edece7; duration:10000; transition2d:5; timeshift:5000; kenburnsscale:1.2;">
-
-                                <img width="245" height="477" src="<%=categs[1].prods[0].imgs[0]%>" class="ls-l"
-                                    alt="image"
-                                    style="top:520px; left:-25px; background-size:inherit; background-position:inherit;"
-                                    data-ls="offsetxin:left; durationin:1400; delayin:1400; easingin:easeOutQuint; offsetxout:left; easingout:easeOutQuint; parallax:true; parallaxlevel:9; parallaxaxis:both;">
-                                <img width="1003" height="595" src="<%=categs[1].prods[0].imgs[1]%>" class="ls-l"
-                                    alt="image"
-                                    style="top:140px; left:478px; background-size:inherit; background-position:inherit;"
-                                    data-ls="durationin:1500; delayin:1300; easingin:easeOutQuint; durationout:1400; parallax:true; parallaxlevel:8; parallaxaxis:both; parallaxdistance:30;">
-                                <p style="top:-110px; left:999px; background-size:inherit; background-position:inherit; font-size:24px; border-top:90px solid #5ee16f; border-right:90px solid #e1aa5e; border-bottom:90px solid #e1aa5e; border-left:90px solid #e1aa5e; width:470px; height:470px; border-radius:100%;"
-                                    class="ls-l"
-                                    data-ls="offsetyin:top; durationin:1400; delayin:500; easingin:easeOutQuint; offsetyout:top; durationout:1100; fadeout:false; parallax:true; parallaxlevel:5; parallaxaxis:both; parallaxdistance:20;">
-                                </p>
-                                <img width="591" height="707" src="<%=categs[1].prods[0].imgs[2]%>" class="ls-l"
-                                    alt="image"
-                                    style="top:30px; left:1032px; background-size:inherit; background-position:inherit;"
-                                    data-ls="durationin:1400; easingin:easeOutQuint; parallax:true; parallaxlevel:3; parallaxaxis:both; parallaxdistance:15;">
-
-                                <p style="top:586px; left:400px; font-weight:700; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
-                                    class="ls-l ls-hide-tablet ls-hide-phone"
-                                    data-ls="durationin:1200; easingin:easeOutQuint; rotatexin:90; transformoriginin:50% 0% 0; durationout:1300; easingout:easeOutQuint; rotatexout:90; transformoriginout:50% 100% 0;">
-                                    02</p>
-                                <p style="top:585px; left:430px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
-                                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">/</p>
-                                <p style="top:586px; left:450px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
-                                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">03</p>
-                                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self"
-                                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
-                                    <div style="top:586px; left:500px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
-                                        class=""><i class="fas fa-caret-right"></i></div>
-                                </a>
-                                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#prev" target="_self"
-                                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
-                                    <div style="top:586px; left:361px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
-                                        class=""><i class="fas fa-caret-left"></i></div>
-                                </a>
-                                <p style="top:205px; left:360px; font-weight:600; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c; letter-spacing:3px;"
-                                    class="ls-l ls-hide-tablet ls-hide-phone"
-                                    data-ls="offsetxin:-100; durationin:1200; delayin:800; easingin:easeOutQuint; transformoriginin:0% 50% 0; offsetxout:-100; minfontsize:16;">
-                                    <%=categs[1].prods[0].name[lang] %>
-                                </p>
-                                <h1 style="top:342px; left:360px; font-weight:500; background-size:inherit; background-position:inherit; font-size:100px; font-family:Jost; color:#2c2c2c;"
-                                    class="ls-l ls-hide-phone"
-                                    data-ls="offsetxin:-100; durationin:1300; delayin:1200; easingin:easeOutQuint; offsetxout:-100;">
-                                    <%=categs[1].name[lang] %>
-                                </h1>
-                                <!-- <p style="top:190px; left:360px; font-weight:600; background-size:inherit; background-position:inherit; font-family:Jost; color:#2c2c2c; font-size:26px; letter-spacing:3px;"
-                            class="ls-l ls-hide-desktop ls-hide-phone"
-                            data-ls="offsetxin:-100; durationin:1200; delayin:800; easingin:easeOutQuint; transformoriginin:0% 50% 0; offsetxout:-100;">
-                            New Arrivals 2022</p>
+            <% let i=1%>
+                <%categs.forEach(c=>{%>
+                    <div class="ls-slide"
+                        data-ls="bgcolor:#edece7; duration:10000; transition2d:5; timeshift:5000; kenburnsscale:1.2;">
+                        <img width="1920" height="900" src="/<%=c.img%>" class="ls-bg" alt="hero image" />
+                        <p style="top:586px; left:400px; font-weight:700; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                            class="ls-l ls-hide-tablet ls-hide-phone"
+                            data-ls="durationin:1200; easingin:easeOutQuint; rotatexin:90; transformoriginin:50% 0% 0; durationout:1300; easingout:easeOutQuint; rotatexout:90; transformoriginout:50% 100% 0;">
+                            0<%=i%>
+                        </p>
+                        <p style="top:585px; left:430px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                            class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">/</p>
+                        <p style="top:586px; left:450px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
+                            class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">
+                            <%= categs.length%>
+                        </p>
+                        <a class="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self"
+                            data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                            <div style="top:586px; left:500px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                                class=""><i class="fas fa-caret-right"></i></div>
+                        </a>
+                        <a class="ls-l ls-hide-tablet ls-hide-phone" href="#prev" target="_self"
+                            data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
+                            <div style="top:586px; left:361px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
+                                class=""><i class="fas fa-caret-left"></i></div>
+                        </a>
+                        <p style="top:205px; left:360px; font-weight:600; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c; letter-spacing:3px;"
+                            class="ls-l ls-hide-tablet ls-hide-phone"
+                            data-ls="offsetxin:-100; durationin:1200; delayin:800; easingin:easeOutQuint; transformoriginin:0% 50% 0; offsetxout:-100; minfontsize:16;">
+                            <%=c.name[lang]%>
+                        </p>
                         <h1 style="top:212px; left:150px; font-weight:500; background-size:inherit; background-position:inherit; font-size:170px; font-family:Jost; color:#2c2c2c;"
                             class="ls-l ls-hide-desktop ls-hide-tablet"
                             data-ls="offsetxin:-100; durationin:1300; delayin:1000; easingin:easeOutQuint; offsetxout:-100;">
-                            Trendy
+                            <%=c.name[lang]%>
                         </h1>
-                        <h1 style="top:402px; left:150px; font-weight:500; background-size:inherit; background-position:inherit; font-size:170px; font-family:Jost; color:#2c2c2c;"
-                            class="ls-l ls-hide-desktop ls-hide-tablet"
-                            data-ls="offsetxin:-100; durationin:1300; delayin:1200; easingin:easeOutQuint; offsetxout:-100;">
-                            Collection
-                        </h1> -->
-                            </div>
-                            <%}%>
-                                <%}%>
-                                    <% if(categs[2]){%>
-                                        <%if(categs[2].prods[0]){%>
-                                            <div class="ls-slide"
-                                                data-ls="bgcolor:#edece7; duration:10000; transition2d:5; timeshift:5000; kenburnsscale:1.2;">
-
-                                                <img width="245" height="477" src="<%=categs[2].prods[0].imgs[0]%>"
-                                                    class="ls-l" alt="image"
-                                                    style="top:520px; left:-25px; background-size:inherit; background-position:inherit;"
-                                                    data-ls="offsetxin:left; durationin:1400; delayin:1400; easingin:easeOutQuint; offsetxout:left; easingout:easeOutQuint; parallax:true; parallaxlevel:9; parallaxaxis:both;">
-                                                <img width="1003" height="595" src="<%=categs[2].prods[0].imgs[1]%>"
-                                                    class="ls-l" alt="image"
-                                                    style="top:140px; left:478px; background-size:inherit; background-position:inherit;"
-                                                    data-ls="durationin:1500; delayin:1300; easingin:easeOutQuint; durationout:1400; parallax:true; parallaxlevel:8; parallaxaxis:both; parallaxdistance:30;">
-                                                <p style="top:-110px; left:999px; background-size:inherit; background-position:inherit; font-size:24px; border-top:90px solid #5ee16f; border-right:90px solid #e1aa5e; border-bottom:90px solid #e1aa5e; border-left:90px solid #e1aa5e; width:470px; height:470px; border-radius:100%;"
-                                                    class="ls-l"
-                                                    data-ls="offsetyin:top; durationin:1400; delayin:500; easingin:easeOutQuint; offsetyout:top; durationout:1100; fadeout:false; parallax:true; parallaxlevel:5; parallaxaxis:both; parallaxdistance:20;">
-                                                </p>
-                                                <img width="591" height="707" src="<%=categs[2].prods[0].imgs[2]%>"
-                                                    class="ls-l" alt="image"
-                                                    style="top:30px; left:1032px; background-size:inherit; background-position:inherit;"
-                                                    data-ls="durationin:1400; easingin:easeOutQuint; parallax:true; parallaxlevel:3; parallaxaxis:both; parallaxdistance:15;">
-
-                                                <p style="top:586px; left:400px; font-weight:700; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
-                                                    class="ls-l ls-hide-tablet ls-hide-phone"
-                                                    data-ls="durationin:1200; easingin:easeOutQuint; rotatexin:90; transformoriginin:50% 0% 0; durationout:1300; easingout:easeOutQuint; rotatexout:90; transformoriginout:50% 100% 0;">
-                                                    02</p>
-                                                <p style="top:585px; left:430px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
-                                                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">
-                                                    /
-                                                </p>
-                                                <p style="top:586px; left:450px; font-weight:500; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c;"
-                                                    class="ls-l ls-hide-tablet ls-hide-phone" data-ls="static:forever;">
-                                                    03
-                                                </p>
-                                                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#next" target="_self"
-                                                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
-                                                    <div style="top:586px; left:500px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
-                                                        class=""><i class="fas fa-caret-right"></i></div>
-                                                </a>
-                                                <a class="ls-l ls-hide-tablet ls-hide-phone" href="#prev" target="_self"
-                                                    data-ls="hover:true; hovercolor:#e1aa5e; static:forever;">
-                                                    <div style="top:586px; left:361px; background-size:inherit; background-position:inherit; font-size:20px; color:#2c2c2c;"
-                                                        class=""><i class="fas fa-caret-left"></i></div>
-                                                </a>
-                                                <p style="top:205px; left:360px; font-weight:600; background-size:inherit; background-position:inherit; font-size:16px; font-family:Jost; color:#2c2c2c; letter-spacing:3px;"
-                                                    class="ls-l ls-hide-tablet ls-hide-phone"
-                                                    data-ls="offsetxin:-100; durationin:1200; delayin:800; easingin:easeOutQuint; transformoriginin:0% 50% 0; offsetxout:-100; minfontsize:16;">
-                                                    <%=categs[2].prods[0].name[lang] %>
-                                                </p>
-                                                <h1 style="top:342px; left:360px; font-weight:500; background-size:inherit; background-position:inherit; font-size:100px; font-family:Jost; color:#2c2c2c;"
-                                                    class="ls-l ls-hide-phone"
-                                                    data-ls="offsetxin:-100; durationin:1300; delayin:1200; easingin:easeOutQuint; offsetxout:-100;">
-                                                    <%=categs[2].name[lang] %>
-                                                </h1>
-                                                <!-- <p style="top:190px; left:360px; font-weight:600; background-size:inherit; background-position:inherit; font-family:Jost; color:#2c2c2c; font-size:26px; letter-spacing:3px;"
-                                class="ls-l ls-hide-desktop ls-hide-phone"
-                                data-ls="offsetxin:-100; durationin:1200; delayin:800; easingin:easeOutQuint; transformoriginin:0% 50% 0; offsetxout:-100;">
-                                New Arrivals 2022</p>
-                            <h1 style="top:212px; left:150px; font-weight:500; background-size:inherit; background-position:inherit; font-size:170px; font-family:Jost; color:#2c2c2c;"
-                                class="ls-l ls-hide-desktop ls-hide-tablet"
-                                data-ls="offsetxin:-100; durationin:1300; delayin:1000; easingin:easeOutQuint; offsetxout:-100;">
-                                Trendy
-                            </h1>
-                            <h1 style="top:402px; left:150px; font-weight:500; background-size:inherit; background-position:inherit; font-size:170px; font-family:Jost; color:#2c2c2c;"
-                                class="ls-l ls-hide-desktop ls-hide-tablet"
-                                data-ls="offsetxin:-100; durationin:1300; delayin:1200; easingin:easeOutQuint; offsetxout:-100;">
-                                Collection
-                            </h1> -->
-                                            </div>
-                                            <%}%>
-                                                <%}%>
-
-        </div>
+                    </div>
+                    <%i++%>
+                        <%})%>
         </div>
     </section>
     <!--==============================
@@ -217,23 +52,18 @@
     <section class=" ">
         <div class="container-lg">
             <div class="banner-wrap-style1 row">
-                <% if(offers.length> 0){ %>
-                    <% offers.forEach(f=>{ %>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="banner_style3 mega-hover">
-                                <div class="banner_img">
-                                    <img src="<%= f.imgs[0] %>" alt="Offer Image">
-                                </div>
-                                <div class="banner_content">
-                                    <h3 class="banner_title"><strong>-<%=f.offer %> % Off</strong>
-                                        <%= (lang=="ar" ) ? f.name.ar : f.name.en %>
-                                    </h3>
-                                    <a href="shop.html" class="line-btn">Shop Now</a>
-                                </div>
+                <%categs.forEach(f=>{ %>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="banner_style3 mega-hover">
+                            <div class="banner_img">
+                                <img src="<%= f.img %>" alt="Offer Image">
+                            </div>
+                            <div class="banner_content">
+                                <a href="/prods/<%= f._id%>" class="line-btn">Shop Now</a>
                             </div>
                         </div>
-                        <%})%>
-                            <%} %>
+                    </div>
+                    <%})%>
             </div>
         </div>
     </section>
@@ -283,11 +113,12 @@
                             <div class="banner_img overflow-hidden">
                                 <img src="<%=categs[0].img%>" alt="Offer Banner" class="w-100">
                             </div>
-                            <div class="banner_style1 bg-theme">
-                                <!-- حق الدائراء الاصفرا فوق الصوره
-                        <h3 class="banner_title text-white">Extended <strong>Dress</strong></h3>
-                        <span class="banner_label text-white">Outer Wear</span>
-                        -->
+                            <div class="banner_content">
+                                <h3 class="banner_title mb-0"><strong>
+                                        <%= categs[0].name[lang] %>
+                                    </strong></h3>
+                                <span class="banner_label">TRENDING 2022</span>
+                                <a href="/prods/<%=categs[0]%>" class="line-btn hover-white">Shop Now</a>
                             </div>
                         </div>
                     </div>
@@ -302,8 +133,8 @@
                                         <h3 class="banner_title mb-0"><strong>
                                                 <%= categs[1].name[lang] %>
                                             </strong></h3>
-                                        <!-- <span class="banner_label">TRENDING 2022</span>
-                                                <a href="shop.html" class="line-btn hover-white">Shop Now</a> -->
+                                        <span class="banner_label">TRENDING 2022</span>
+                                        <a href="/prods/<%=categs[1]%>" class="line-btn hover-white">Shop Now</a>
                                     </div>
                                 </div>
                                 <%}%>
@@ -317,7 +148,8 @@
                                                         <%= categs[2].name[lang]%>
                                                     </strong></h3>
                                                 <span class="banner_label">TRENDING 2022</span>
-                                                <a href="shop.html" class="line-btn hover-white">Shop Now</a>
+                                                <a href="/prods/<%=categs[2]%>" class="line-btn hover-white">Shop
+                                                    Now</a>
                                             </div>
                                         </div>
                                         <%}%>
@@ -376,17 +208,6 @@
     Discount Area
     ==============================-->
     <section class=" ">
-        <!--حق صورة مقاس 618*487-->
-        <!--
-        <div class="container">
-            <div class="discount-wrap">
-                <div class="row">
-                    <div class="col-md-7 align-self-end text-center text-lg-start">
-                        <div class="pt-3">
-                            <img src="/assets/img/offer/count-down-banner.png" alt="Discount Banner">
-                        </div>
-                    </div>
-                -->
 
         <div class="ms-lg-5 ms-xl-0 col-md-auto align-self-center">
             <div class="discount-content text-center">
@@ -414,109 +235,6 @@
         </div>
         </div>
     </section>
-    <!--==============================
-    New Collection Area
-    ==============================-->
-    <!--حق new collection -->
-    <!--
-    <section class="space-top space-extra-bottom">
-        <div class="container">
-            <div class="title-area text-center">
-                <h2 class="sec-title">New Collection</h2>
-                <p class="sec-text">Latest Collection and Bold</p>
-                <div class="sec-line"></div>
-            </div>
-        </div>
-        <div class="container vs_container">
-            <div class="row">
-                <div class="col-xl-auto">
-                    <div class="banner_style2">
-                        <div class="banner_img">
-                            <img src="/assets/img/banner/banner-1-1.jpg" alt="Banner Image">
-                        </div>
-                        <div class="banner_content">
-                            <span class="banner_label">Trending 2022</span>
-                            <h2 class="banner_title">Start With The Best Sellers</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl">
-                    <div class="row pt-30 pt-xl-0">
-                        <div class="col-6">
-                            <div class="vs-product product_layout1 style2">
-                                <div class="product-img">
-                                    <span class="tag-style1">Sale</span>
-                                    <a href="shop-details.html"><img src="/assets/img/featued/featued-2-1.jpg" alt="featued"></a>
-                                    <div class="actions">
-                                        <a href="cart.html" class="icon-btn style2"><i class="fal fa-shopping-bag"></i></a>
-                                        <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
-                                        <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="product-title"><a href="shop-details.html" class="text-inherit">Shearling jacket</a></h3>
-                                    <span class="product-price">$145.90</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="vs-product product_layout1 style2">
-                                <div class="product-img">
-                                    <span class="tag-style1">Sale</span>
-                                    <a href="shop-details.html"><img src="/assets/img/featued/featued-2-2.jpg" alt="featued"></a>
-                                    <div class="actions">
-                                        <a href="cart.html" class="icon-btn style2"><i class="fal fa-shopping-bag"></i></a>
-                                        <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
-                                        <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="product-title"><a href="shop-details.html" class="text-inherit">Shearling Sweater</a></h3>
-                                    <span class="product-price">$199.90</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="vs-product product_layout1 style2">
-                                <div class="product-img">
-                                    <span class="tag-style1">Sale</span>
-                                    <a href="shop-details.html"><img src="/assets/img/featued/featued-2-3.jpg" alt="featued"></a>
-                                    <div class="actions">
-                                        <a href="cart.html" class="icon-btn style2"><i class="fal fa-shopping-bag"></i></a>
-                                        <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
-                                        <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="product-title"><a href="shop-details.html" class="text-inherit">Shorts jacket</a></h3>
-                                    <span class="product-price">$300.90</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="vs-product product_layout1 style2">
-                                <div class="product-img">
-                                    <span class="tag-style1">Sale</span>
-                                    <a href="shop-details.html"><img src="/assets/img/featued/featued-2-4.jpg" alt="featued"></a>
-                                    <div class="actions">
-                                        <a href="cart.html" class="icon-btn style2"><i class="fal fa-shopping-bag"></i></a>
-                                        <a href="#" class="icon-btn style2"><i class="fal fa-eye"></i></a>
-                                        <a href="#" class="icon-btn style2"><i class="fal fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="product-title"><a href="shop-details.html" class="text-inherit">Hoodie jacket</a></h3>
-                                    <span class="product-price">$120.90</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
--->
     <hr class="hr_style3 m-0">
     <!--==============================
     Brand Area
