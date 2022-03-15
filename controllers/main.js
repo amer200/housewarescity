@@ -2,26 +2,13 @@ const CategAr = require("../models/category-ar");
 const Team = require("../models/team");
 const User = require("../models/user");
 exports.getIndex = (req, res, next) => {
-  CategAr.find()
-    .then((c) => {
-      let offers = [];
-      res.render("main/index", {
-        categs: c,
-        offers: offers,
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  res.render("main/index");
 };
 exports.getAbout = (req, res, next) => {
-  CategAr.find()
-    .then((c) => {
-      Team.find().then((t) => {
-        res.render("main/about", {
-          categs: c,
-          team: t,
-        });
+  Team.find()
+    .then((t) => {
+      res.render("main/about", {
+        team: t,
       });
     })
     .catch((err) => {
@@ -34,7 +21,7 @@ exports.getProds = (req, res, next) => {
   let end = req.query.end;
   if (!start) {
     start = 0;
-    end = 0;
+    end = 10;
   }
   CategAr.findById(categ)
     .then((c) => {
@@ -70,7 +57,6 @@ exports.getProd = (req, res, next) => {
   exports.getCategs = (req, res, next) => {
     CategAr.find()
       .then((c) => {
-        console.log(c);
         res.send(c);
       })
       .catch((err) => {
@@ -106,7 +92,7 @@ exports.getCard = (req, res, next) => {
 exports.search = (req, res, next) => {
   const text = req.body.text.trim();
   console.log(text);
-  const lang = req.session.cookie.lang;;
+  const lang = req.session.cookie.lang;
   let filter;
   if (lang == "en") {
     filter = {
@@ -119,7 +105,6 @@ exports.search = (req, res, next) => {
   }
   CategAr.find(filter)
     .then((c) => {
-      // console.log(c);
       if (c[0]) {
         const prods = c[0].prods.filter((e) => {
           return (

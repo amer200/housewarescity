@@ -34,7 +34,6 @@ const sessionConfig = {
 };
 app.use((req, res, next) => {
   const lang = req.query.lang;
-  console.log(lang);
   if (lang) {
     sessionConfig.cookie.lang = lang;
     res.locals.lang = sessionConfig.cookie.lang;
