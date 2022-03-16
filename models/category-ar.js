@@ -31,5 +31,4 @@ const categorySchema = mongoose.Schema({
   backg: String,
   prods: [prodScema],
 });
-prodScema.index({ name: "text", name: "text" });
 module.exports = mongoose.model("Categ-ar", categorySchema);
